@@ -1,0 +1,161 @@
+#! /bin/bash
+
+sudo pacman -S --needed base-devel git wget yajl
+cd /tmp
+git clone https://aur.archlinux.org/package-query.git
+makepkg -si && cd/tmp/
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt/
+makepkg -si
+yaourt -S --noconfirm pamac-aur
+
+# Wallpaper
+sudo pacman -S --noconfirm feh
+
+
+# Backlight
+sudo pacman -S --noconfirm acpilight
+sudo pacman -S --noconfirm acpilight
+
+# GTK setting
+sudo pacman -S --noconfirm lxappearance
+sudo pacman -S --noconfirm gnome-themes-extra
+yaourt -S --noconfirm gtk-theme-numix-solarized
+
+# Browser
+sudo pacman -S --noconfirm qutebrowser
+
+# R
+sudo pacman -S --noconfirm r
+
+# Editor
+sudo pacman -S --noconfirm neovim
+sudo pacman -S --noconfirm python-pynvim
+
+# Screenshot
+sudo pacman -S --noconfirm scrot
+
+# Notification
+sudo pacman -S --noconfirm dunst
+
+# Font
+sudo pacman -S --noconfirm otf-fira-code
+
+# Qt use GTK theme
+sudo pacman -S --noconfirm qt5-styleplugins
+
+# Hotkeys
+sudo pacman -S --noconfirm sxhkd
+
+# Zathura
+sudo pacman -S --noconfirm zathura
+sudo pacman -S --noconfirm zathura-pdf-mupdf
+sudo pacman -S --noconfirm zathura-pdf-poppler
+sudo pacman -S --noconfirm zathura-pdf-djvu
+
+# Hide mouse loading
+sudo pacman -S --noconfirm unclutter
+
+# Transperancy
+sudo pacman -S --noconfirm xcompmgr
+
+# Clipboard command line
+sudo pacman -S --noconfirm xclip
+
+# Window manipulation in i3
+sudo pacman -S --noconfirm xdotool
+
+# Sound
+sudo pacman -S --noconfirm pactl
+sudo pacman -S --noconfirm pavucontrol
+
+# unzip
+sudo pacman -S --noconfirm unzip
+
+# unzip
+sudo pacman -S --noconfirm chromium
+sudo pacman -S --noconfirm pepper-flash
+
+sudo pacman -S --noconfirm arandr
+
+# Install st
+git clone https://github.com/LukeSmithxyz/st
+cd st
+sudo make install
+
+# Neofetch remove
+sudo pacman -Rs --noconfirm neofetch
+sudo pacman -Rs --noconfirm arcolinux-neofetch-git
+rm -r $HOME/neofetch
+
+# Yandex-Disk
+yaourt -S --noconfirm yandex-disk
+
+# lf
+yaourt -S --noconfirm lf
+
+# dmenu
+yaourt -S --noconfirm dmenu2
+
+# Zoterao
+yaourt -S --noconfirm zotero
+yaourt -S --noconfirm bibtool
+
+# Install pip
+sudo pacman -S --noconfirm python-pip
+sudo pacman -S --noconfirm gcc-fortran
+sudo pacman -S --noconfirm imagemagick
+sudo pacman -S --noconfirm tk
+sudo pip install radian
+sudo pip install ipython
+sudo pip install pandas
+sudo pip install numpy
+sudo pip install matplotlib
+sudo pip install autopep8
+
+yaourt -S --noconfirm zoom
+sudo pacman -S --noconfirm pcmanfm
+
+yaourt -S --noconfirm python-arxiv2bib
+yaourt -S --noconfirm python-bibtexparser
+yaourt -S --noconfirm python-doi
+yaourt -S --noconfirm python-filetype
+yaourt -S --noconfirm python-habanero
+yaourt -S --noconfirm python-isbnlib
+yaourt -S --noconfirm python-pylibgen
+yaourt -S --noconfirm papis
+
+
+sudo pacman -S --noconfirm xprintidle
+
+sudo pacman -S --noconfirm pandoc
+sudo pacman -S --noconfirm pandoc-citeproc
+sudo pacman -S --noconfirm pandoc-crossref
+sudo pacman -S --noconfirm texlive-core
+sudo pacman -S --noconfirm nodejs
+
+# Imagemagick Dependencies
+yaourt -S --noconfirm pstoedit-nomagick
+yaourt -S --noconfirm autotrace-nomagick
+yaourt -S --noconfirm flif
+yaourt -S --noconfirm libfpx
+yaourt -S --noconfirm libumem-git
+yaourt -S --noconfirm brunsli
+
+yaourt -S --noconfirm brave-bin
+
+# sudo pacman -S --noconfirm vivaldi
+# sudo /opt/vivaldi/update-ffmpeg
+# sudo /opt/vivaldi/update-widevine
+
+sudo pacman -S --noconfirm flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.jaspstats.JASP
+
+yaourt -S --noconfirm mimeo
+yaourt -S --noconfirm vidir
+yaourt -S --noconfirm onedrive-abraunegg
+
+sudo pacman -S --noconfirm ripgrep
+
+yaourt -S --noconfirm nodejs-live-server
