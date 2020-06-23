@@ -33,13 +33,13 @@ if ($1) {
 }
 endsnippet
 
-snippet eif "Else-If statement" Ai
+snippet eif "Else-If statement" i
 else if ($1) {
 	${0:${VISUAL}}
 }
 endsnippet
 
-snippet else "Else statement" Ai
+snippet else "Else statement" i
 else {
 	${0:${VISUAL}}
 }
@@ -54,10 +54,10 @@ if ($1) {
 endsnippet
 
 snippet ife "ifelse" i
-ifelse($1) 
+ifelse($1)
 endsnippet
 
-snippet while "while loop" Ai
+snippet while "while loop" i
 while($1) {
 	${0:${VISUAL}}
 }
@@ -97,6 +97,6 @@ endsnippet
 # then press <Tab> then type "vec", press <Tab> again to get this:
 # var <- c("#","Given","individual","words","separated","by","spaces")
 # var <- c("#","type","out","individual","words","separated","by","spaces")
-snippet vec 
+snippet vec
 ${1:var} <- c("${0:${VISUAL:/ /","/g}}")
 endsnippet

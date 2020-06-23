@@ -4,3 +4,4 @@ PID=$(echo "$(pstree -lpA "$PID" | tail -n 1)" | awk -F'---' '{print $NF}' | sed
 cd "$(readlink /proc/"$PID"/cwd)"
 "$TERMINAL"
 
+

@@ -1,6 +1,6 @@
 {
   "coc.preferences.noselect": false,
-  "r.lsp.diagnostics": false,
+  "r.lsp.diagnostics" : false,
   "languageserver": {
   "haskell": {
     "command": "hie-wrapper",
@@ -17,7 +17,7 @@
     ],
     "initializationOptions": {
       "languageServerHaskell": {
-        "hlintOn": true
+        "hlintOn": false
       }
     }
   }

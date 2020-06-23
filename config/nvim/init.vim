@@ -2,43 +2,39 @@ let mapleader =","
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
 	silent !mkdir -p ~/.config/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
-	autocmd VimEnter * PlugInstall
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim autocmd VimEnter * PlugInstall
 endif
 
-call plug#begin('~/.config/nvim/plugged')
-
-" Colorscheme support
+call plug#begin('~/.config/nvim/plugged') " Colorscheme support
 Plug 'p7g/vim-bow-wob'
 Plug 'lifepillar/vim-solarized8'
 
 " Language Support
 Plug 'jalvesaq/vimcmdline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'voldikss/vim-mma'
 
 " Notebook
 Plug 'baruchel/vim-notebook'
 
 " R
 Plug 'jalvesaq/Nvim-R'
-" Plug 'gaalcaras/ncm-R'
 
 " Python
 " Plug 'jeetsukumaran/vim-pythonsense'
-Plug 'fs111/pydoc.vim'
+" Plug 'fs111/pydoc.vim'
 Plug 'vim-scripts/indentpython.vim'
 
 " lintr
 Plug 'dense-analysis/ale'
-Plug 'junegunn/vim-easy-align'
-Plug '907th/vim-auto-save'
 Plug 'rhysd/vim-grammarous'
 
-" Need to change stdin in r.vim
-Plug 'sbdchd/neoformat'
+" Plug 'junegunn/vim-easy-align'
+Plug '907th/vim-auto-save'
 
-" Plug 'rf-/YankRing.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
 " Plug 'LucHermitte/lh-brackets'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
@@ -50,7 +46,7 @@ Plug 'bling/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/ingo-library'
 Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/camelcasemotion'
+" Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
@@ -59,7 +55,9 @@ Plug 'junegunn/vim-slash'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'dhruvasagar/vim-table-mode'
 
 " Completion and snippets
 Plug 'sirver/UltiSnips'
@@ -72,7 +70,8 @@ Plug 'Shougo/unite.vim'
 Plug 'rafaqz/citation.vim'
 Plug 'jalvesaq/zotcite'
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'davidgranstrom/nvim-markdown-preview'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 if !filereadable(expand('~/.config/coc/extensions/node_modules/coc-r-lsp/package.json'))
@@ -91,7 +90,7 @@ highlight ColorColumn ctermbg=white
 call matchadd('ColorColumn', '\%81v', 100)
 
 set signcolumn=no
-set updatetime=300
+set updatetime=1000
 set background="light"
 set go=a
 set mouse=a
@@ -103,9 +102,12 @@ set cmdheight=2
 set clipboard+=unnamedplus
 nnoremap <silent><ESC> :noh<CR><ESC>
 imap <Left> <ESC>^
-imap <Right> <ESC>$
+inoremap <Right> <ESC>$
 nmap <Left> ^
-nmap <Right> $
+nnoremap <Right> $
+vmap <Left> ^
+vnoremap <Right> $<Left>
+
 
 " Convert tab to spaces
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
@@ -124,6 +126,7 @@ au ColorScheme * highlight EndOfBuffer ctermfg=white ctermbg=none
 let g:airline_theme='silver'
 let g:airline_powerline_fonts = 1
 " Some basics:
+ 	nnoremap T :tabedit ./
 	nnoremap c "_c
     xnoremap <expr> p 'pgv"'.v:register.'y'
 	set nocompatible
@@ -161,6 +164,7 @@ let g:airline_powerline_fonts = 1
     function! CommandCabbr(abbreviation, expansion)
     execute 'cabbr ' . a:abbreviation . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "' . a:expansion . '" : "' . a:abbreviation . '"<CR>'
     endfunction
+
     command! -nargs=+ CommandCabbr call CommandCabbr(<f-args>)
     CommandCabbr q! u0\|wq
 
@@ -170,6 +174,8 @@ let g:airline_powerline_fonts = 1
 
 " Goyo plugin makes text more readable when writing prose:
 	map <silent> <leader>g :Goyo \| set bg=light \| set linebreak<CR>
+    autocmd Filetype markdown autocmd! User GoyoEnter Limelight
+    autocmd Filetype markdown autocmd! User GoyoLeave Limelight!
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_gb<CR>
@@ -214,6 +220,10 @@ let g:airline_powerline_fonts = 1
 
 " Adjust buffer sizes
     nnoremap <silent>,r :windo wincmd K<CR>:windo wincmd K<CR>:resize 28<CR>
+    nnoremap ,k <C-w>+
+    nnoremap ,j <C-w>-
+    nnoremap ,b :buffers<CR>
+    nnoremap ,l :hide<CR>
 
 " Shortcut for switching buffers
     tnoremap <C-h> <C-\><C-N><C-w>h
@@ -273,7 +283,7 @@ let g:airline_powerline_fonts = 1
     "     \ getline('.')[col('.') - 2]=~"\[A-Za-z\]" ? '"<ESC>' :
     "     \ '""<left>'
 
-    inoremap <silent><expr> "
+    autocmd Filetype r,rmd,python,haskell inoremap <silent><expr> "
         \ getline('.')[col('.') - 1]=~"\[A-Za-z\]" ? '"<ESC>' :
         \ getline('.')[col('.') - 2]=~"\[A-Za-z\]" ? '"<ESC>' :
         \ '""<left>'
@@ -305,8 +315,10 @@ let g:airline_powerline_fonts = 1
 
 " R Settings
     " Common settings
+    autocmd Filetype r,rmd nnoremap <silent> gl :RSend load.project()<CR>:noh<CR>
     autocmd Filetype r,rmd nnoremap <silent> <C-c> :RStop<CR>
-    autocmd Filetype r,rmd nmap <silent> gd <Plug>(coc-definition)
+    autocmd Filetype r,rmd nmap <silent> gD <Plug>(coc-definition)
+
     " Debug shortccuts
     autocmd Filetype r,rmd nnoremap <silent> gn :RSend n<CR>:noh<CR>
     autocmd Filetype r,rmd nnoremap <silent> gq :RSend Q<CR>:noh<CR>
@@ -335,9 +347,9 @@ let g:airline_powerline_fonts = 1
     " View structure
     autocmd Filetype r,rmd map <silent> gS :call RAction('str')<CR>
     autocmd Filetype r,rmd vmap <silent> gS :call RAction('str', 'v')<CR>
-    " View colnames
-    autocmd Filetype r,rmd map <silent> gs :call RAction('colnames')<CR>
-    autocmd Filetype r,rmd vmap <silent> gs :call RAction('colnames', 'v')<CR>
+    " View names
+    autocmd Filetype r,rmd map <silent> gs :call RAction('names')<CR>
+    autocmd Filetype r,rmd vmap <silent> gs :call RAction('names', 'v')<CR>
     " Print
     autocmd Filetype r,rmd map <silent> gp \rp
     " Jump to next function
@@ -360,8 +372,8 @@ let g:airline_powerline_fonts = 1
     autocmd FileType r,rmd setlocal formatoptions-=t
     " Map <CR> to run line and down
     autocmd Filetype r,rmd nmap <silent> <CR> \d
-    autocmd Filetype r nmap <silent> <F17> \su
-    autocmd Filetype r imap <silent> <F17> \su
+    autocmd Filetype r nmap <silent> <F5> \su
+    autocmd Filetype r imap <silent> <F5> \su
 
 " Rmarkdown settings
     " Load template for rmd
@@ -369,9 +381,9 @@ let g:airline_powerline_fonts = 1
     " Run current chunk
     autocmd FileType rmd map <silent> <F4> \ce
     " Run current chunk and down
-    autocmd FileType rmd map <silent> <F5> \ca
+    autocmd FileType rmd map <silent> <F17> \ca
     " Run from the first chunk
-    autocmd Filetype rmd nmap <silent> <F17> \ch
+    autocmd Filetype rmd nmap <silent> <F5> \ch
     " Map gk to knit(render markdown file according to header)
     autocmd Filetype rmd nmap gk \kr
 
@@ -426,6 +438,8 @@ let g:airline_powerline_fonts = 1
     let cmdline_follow_colorscheme = 1
     let cmdline_app           = {}
     let cmdline_app['python']     = 'ipython'
+    let cmdline_app['wl']     = 'wolframscript'
+    autocmd Filetype python nnoremap <silent> gh :call <SID>show_documentation()<CR>
 
 " Haskell
     " nmap gl :put =expand('%:t')<CR>i:load <ESC>dd<C-j>pA<CR><ESC><C-k>
@@ -481,9 +495,23 @@ let g:airline_powerline_fonts = 1
     autocmd BufNewFile,BufRead *.md set textwidth=80
     autocmd BufNewFile,BufRead *.md set wrapmargin=0
     autocmd BufNewFile,BufRead *.md set formatoptions+=t
-    autocmd BufNewFile,BufRead *.md set formatoptions+=a
+    " autocmd BufNewFile,BufRead *.md set formatoptions+=a
     autocmd BufNewFile,BufRead *.md set linebreak
     au FileType markdown nnoremap gk :MarkdownPreview<CR>
+
+    function! s:isAtStartOfLine(mapping)
+    let text_before_cursor = getline('.')[0 : col('.')-1]
+    let mapping_pattern = '\V' . escape(a:mapping, '\')
+    let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+    return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+    endfunction
+
+    inoreabbrev <expr> <bar><bar>
+            \ <SID>isAtStartOfLine('\|\|') ?
+            \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+    inoreabbrev <expr> __
+            \ <SID>isAtStartOfLine('__') ?
+            \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
 "    " Load template for markdown
 "    autocmd BufNewFile *.md 0r ~/.config/nvim/skeleton.md
@@ -505,7 +533,6 @@ let g:airline_powerline_fonts = 1
     let g:ale_warn_about_trailing_whitespace = 0
     let g:ale_lint_delay = 200
     let g:ale_lint_on_insert_leave = 1
-    " autocmd Filetype python let b:ale_fixers = ['autopep8', 'yapf']
     autocmd Filetype python let b:ale_fixers = ['yapf']
     autocmd Filetype r,rmd let b:ale_fixers = ['styler']
     autocmd Filetype r,rmd let b:ale_lintr = ['lintr']
@@ -519,12 +546,13 @@ let g:airline_powerline_fonts = 1
     nmap <silent> <C-,> <Plug>(ale_next)
     let g:ale_fix_on_save = 1
     let g:ale_r_lintr_options = 'lintr::with_defaults(line_length_linter = NULL, trailing_blank_lines_linter = NULL, trailing_whitespace_linter = NULL)'
+    " let g:ale_r_lintr_options = 'lintr::with_defaults(trailing_blank_lines_linter = NULL, trailing_whitespace_linter = NULL)'
 
 
 " autocmd Filetype markdown imap <CR> <ESC>maVgggq`aa<CR>
 
-au FileType markdown vmap <tab> :EasyAlign*<Bar><Enter>
-au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
+" au FileType markdown vmap <tab> :EasyAlign*<Bar><Enter>
+" au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
 
 set t_Co=256
 let $ZoteroSQLpath = '/home/lyh970817/Zotero/zotero.sqlite'
@@ -555,13 +583,15 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-let g:neoformat_enabled_r = ['styler']
-let g:neoformat_only_msg_on_error = 1
-let g:neoformat_verbose = 1
-
 let g:mkdp_command_for_global = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 set updatetime=500
 
+let g:limelight_conceal_ctermfg = 'gray'
 
+let g:vimwiki_list = [{'path':'~/Yandex.Disk/VimWiki', 'path_html':'~/Yandex.Disk/VimWiki/exports'}]
 
+" fzf
+nnoremap <Leader>s :Rg<CR>
+
+command Q :Git commit

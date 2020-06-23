@@ -1,21 +1,18 @@
 #! /bin/bash
 
-sudo pacman -S --needed base-devel git wget yajl
-cd /tmp
-git clone https://aur.archlinux.org/package-query.git
-makepkg -si && cd/tmp/
-git clone https://aur.archlinux.org/yaourt.git
-cd yaourt/
-makepkg -si
-yaourt -S --noconfirm pamac-aur
 
 # Wallpaper
 sudo pacman -S --noconfirm feh
 
+# Font
+sudo pacman -S --noconfirm ttf-fira-code
 
-# Backlight
-sudo pacman -S --noconfirm acpilight
-sudo pacman -S --noconfirm acpilight
+# light control
+sudo pacman -S --noconfirm light
+
+# search
+sudo pacman -S --noconfirm fzf
+
 
 # GTK setting
 sudo pacman -S --noconfirm lxappearance
@@ -73,9 +70,6 @@ sudo pacman -S --noconfirm pavucontrol
 sudo pacman -S --noconfirm unzip
 
 # unzip
-sudo pacman -S --noconfirm chromium
-sudo pacman -S --noconfirm pepper-flash
-
 sudo pacman -S --noconfirm arandr
 
 # Install st
@@ -147,10 +141,6 @@ yaourt -S --noconfirm brave-bin
 # sudo pacman -S --noconfirm vivaldi
 # sudo /opt/vivaldi/update-ffmpeg
 # sudo /opt/vivaldi/update-widevine
-
-sudo pacman -S --noconfirm flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.jaspstats.JASP
 
 yaourt -S --noconfirm mimeo
 yaourt -S --noconfirm vidir
