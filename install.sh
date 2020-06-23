@@ -13,6 +13,11 @@ sudo pacman -S --noconfirm light
 # search
 sudo pacman -S --noconfirm fzf
 
+# ssh
+sudo pacman -S --noconfirm openssh
+
+# Bluetooth keyboard
+yaourt -S --noconfirm obinskit
 
 # GTK setting
 sudo pacman -S --noconfirm lxappearance

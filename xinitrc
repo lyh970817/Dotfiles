@@ -34,7 +34,6 @@ unclutter &
 yandex-disk start &
 ibus-daemon -drx &
 onedrive --syncdir ~/Yandex.Disk/Project/Research/GLAD/Papers --monitor &
-xset s -off dpms &
 if [[ $(iseink) -eq 1 ]];then
     eink &
 else
