@@ -10,3 +10,8 @@
 
 * R lintr disable variable name linting
 
+* Python formatter install
+
+* Change file permission
+
+* Write a automatic install function

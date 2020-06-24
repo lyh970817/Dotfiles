@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# cp -rf ./config/* $HOME/.config
-sudo cp -arf ./bin/ $HOME/.local/
+cp -rf ./config/* $HOME/.config
+sudo cp -arf ./bin/ $HOME/.local/bin/
 cp -f ./profile $HOME/.profile
 # cp -f ./xscreensaver $HOME/.xscreensaver
 cp -f ./Xdefaults2 $HOME/.Xdefaults
@@ -9,7 +9,8 @@ ln -s $HOME/.Xdefaults $HOME/.Xresources
 cp -f ./zprofile $HOME/.zprofile
 cp -f ./xinitrc $HOME/.xinitrc
 cp -r ./ssh $HOME/.ssh
-cp -r ./Rprofile $HOME/.Rprofile
+cp ./Rprofile $HOME/.Rprofile
+cp ./gitconfig $HOME/.gitconfig
 
 mkdir $HOME/.tmp
 rm $HOME/.bash_logout $HOME/.bash_profile

@@ -1,11 +1,22 @@
 #! /bin/bash
 
+sh ./pamac.sh
+
+pamac install i3
 
 # Wallpaper
 sudo pacman -S --noconfirm feh
 
+sudo pacman -S --noconfirm curl
+
+sudo pacman -S --noconfirm xorg
+sudo pacman -S --noconfirm xorg-xinit
+sudo pacman -S --noconfirm x-server
+
 # Font
 sudo pacman -S --noconfirm ttf-fira-code
+sudo pacman -S --noconfirm powerline-fonts
+sudo pacman -S --noconfirm wqy-zenhei
 
 # light control
 sudo pacman -S --noconfirm light
@@ -154,3 +165,9 @@ yaourt -S --noconfirm onedrive-abraunegg
 sudo pacman -S --noconfirm ripgrep
 
 yaourt -S --noconfirm nodejs-live-server
+
+R -e 'install.packages("languageserver")'
+R -e 'install.packages("tidyverse")'
+R -e 'install.packages("styler")'
+R -e 'install.packages("lintr")'
+R -e 'install.packages("devtools")'

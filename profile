@@ -10,7 +10,7 @@ export TERMINAL="st"
 # export BROWSER="vivaldi-stable"
 export READER="zathura"
 export FILE="lf"
-export ARSETUP="$HOME/.archsetup"
+export ARSETUP="$HOME/.dotfiles"
 export HIE_HOOGLE_DATABASE="$HOME/.hoogle/default-haskell-5.0.17.hoo"
 
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
