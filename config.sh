@@ -1,16 +1,15 @@
 #!/bin/bash
 
-cp -rf ./config/* $HOME/.config
-sudo cp -arf ./bin/ $HOME/.local/bin/
-cp -f ./profile $HOME/.profile
-# cp -f ./xscreensaver $HOME/.xscreensaver
-cp -f ./Xdefaults2 $HOME/.Xdefaults
+ln -s $(pwd)/config/* $HOME/.config/
+ln -s $(pwd)/bin/* $HOME/.local/bin/
+
+ln -s $(pwd)/profile $HOME/.profile
+ln -s $(pwd)/Xdefaults2 $HOME/.Xdefaults
 ln -s $HOME/.Xdefaults $HOME/.Xresources
-cp -f ./zprofile $HOME/.zprofile
-cp -f ./xinitrc $HOME/.xinitrc
-cp -r ./ssh $HOME/.ssh
-cp ./Rprofile $HOME/.Rprofile
-cp ./gitconfig $HOME/.gitconfig
+ln -s $(pwd)/zprofile $HOME/.zprofile
+ln -s $(pwd)/xinitrc $HOME/.xinitrc
+ln -s $(pwd)/Rprofile $HOME/.Rprofile
+ln -s $(pwd)/gitconfig $HOME/.gitconfig
 
 mkdir $HOME/.tmp
 rm $HOME/.bash_logout $HOME/.bash_profile
