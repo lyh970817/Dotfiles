@@ -18,6 +18,7 @@ Plug 'voldikss/vim-mma'
 Plug 'baruchel/vim-notebook'
 
 " R
+" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'jalvesaq/Nvim-R'
 
 " Python
@@ -107,7 +108,6 @@ nmap <Left> ^
 nnoremap <Right> $
 vmap <Left> ^
 vnoremap <Right> $<Left>
-
 
 " Convert tab to spaces
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
@@ -314,7 +314,10 @@ let g:airline_theme='silver'
 
 " R Settings
     " Common settings
+    let R_debug = 0
+    autocmd Filetype r,rmd nnoremap <silent> <Leader>db :!git grep -l 'browser()'\|xargs sed -i 's/browser()//g'<CR>
     autocmd Filetype r,rmd nnoremap <silent> gl :RSend load.project()<CR>:noh<CR>
+    autocmd Filetype r,rmd nnoremap <silent> gL :RSend devtools::load_all()<CR>:noh<CR>
     autocmd Filetype r,rmd nnoremap <silent> <C-c> :RStop<CR>
     autocmd Filetype r,rmd nmap <silent> gD <Plug>(coc-definition)
 
@@ -594,3 +597,5 @@ let g:vimwiki_list = [{'path':'~/Yandex.Disk/VimWiki', 'path_html':'~/Yandex.Dis
 nnoremap <Leader>s :Rg<CR>
 
 command Q :Git commit
+
+nnoremap <Leader>n :%s/\<<c-r><c-w>\>//g\|norm!``<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>

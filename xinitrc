@@ -26,7 +26,6 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-bluetoothctl power on
 dunst &
 sxhkd &
 xcompmgr &
