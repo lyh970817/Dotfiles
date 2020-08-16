@@ -539,16 +539,10 @@ let g:airline_theme='silver'
     autocmd Filetype r,rmd let b:ale_fixers = ['styler']
     autocmd Filetype r,rmd let b:ale_lintr = ['lintr']
     let g:ale_set_highlights = 1
-    " let g:ale_fixers = {
-    " \   'rmd': ['styler'],
-    " \   'r': ['styler'],
-    " \   'python': ['autopep8', 'yapf']
-    " \}
     nmap <silent> <C-;> <Plug>(ale_previous)
     nmap <silent> <C-,> <Plug>(ale_next)
     let g:ale_fix_on_save = 1
     let g:ale_r_lintr_options = 'lintr::with_defaults(line_length_linter = NULL, trailing_blank_lines_linter = NULL, trailing_whitespace_linter = NULL)'
-    " let g:ale_r_lintr_options = 'lintr::with_defaults(trailing_blank_lines_linter = NULL, trailing_whitespace_linter = NULL)'
 
 
 " autocmd Filetype markdown imap <CR> <ESC>maVgggq`aa<CR>

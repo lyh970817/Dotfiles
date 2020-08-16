@@ -137,7 +137,6 @@ yaourt -S --noconfirm papis
 
 
 sudo pacman -S --noconfirm xprintidle
-
 sudo pacman -S --noconfirm pandoc
 sudo pacman -S --noconfirm pandoc-citeproc
 sudo pacman -S --noconfirm pandoc-crossref
@@ -154,6 +153,8 @@ yaourt -S --noconfirm brunsli
 
 yaourt -S --noconfirm brave-bin
 
+yaourt -S --noconfirm googlepinyin
+yaourt -S --noconfirm sougoupinyin
 # sudo pacman -S --noconfirm vivaldi
 # sudo /opt/vivaldi/update-ffmpeg
 # sudo /opt/vivaldi/update-widevine
@@ -173,3 +174,7 @@ R -e 'install.packages("styler")'
 R -e 'install.packages("lintr")'
 R -e 'install.packages("devtools")'
 R -e 'install.packages("prettydoc")'
+
+sudo pacman -S --noconfirm vlc
+sudo pacman -S --noconfirm qbittorrent
+
