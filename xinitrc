@@ -26,7 +26,9 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-git add
+git add \* $(ARSETUP)
+git commit -a -m "start-up commit" $(ARSETUP)
+git push $(ARSETUP)
 
 fcitx -d &
 autobluetooth &
