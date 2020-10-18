@@ -6,13 +6,18 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged') " Colorscheme support
+
+" Themes
 Plug 'p7g/vim-bow-wob'
 Plug 'lifepillar/vim-solarized8'
+Plug 'Yggdroot/indentLine'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Language Support
 Plug 'jalvesaq/vimcmdline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'voldikss/vim-mma'
+" Plug 'voldikss/vim-mma'
 
 " Notebook
 Plug 'baruchel/vim-notebook'
@@ -34,28 +39,23 @@ Plug 'rhysd/vim-grammarous'
 Plug '907th/vim-auto-save'
 
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
+" Read on Zhihu
+" Plug 'tpope/vim-fugitive'
 
-" Plug 'LucHermitte/lh-brackets'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 " Plug 'jreybert/vimagit'
-" Plug 'lukesmithxyz/vimling'
 " Plug 'vimwiki/vimwiki'
-Plug 'bling/vim-airline'
+
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-scripts/ingo-library'
 Plug 'tpope/vim-repeat'
-" Plug 'vim-scripts/camelcasemotion'
 Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'tpope/vim-surround'
-Plug 'Yggdroot/indentLine'
 Plug 'yuttie/comfortable-motion.vim'
+
 Plug 'junegunn/vim-slash'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'dhruvasagar/vim-table-mode'
@@ -71,10 +71,14 @@ Plug 'Shougo/unite.vim'
 Plug 'rafaqz/citation.vim'
 Plug 'jalvesaq/zotcite'
 
+" Markdown
 Plug 'davidgranstrom/nvim-markdown-preview'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+
 call plug#end()
 
+" Autoinstall coc plugins
 if !filereadable(expand('~/.config/coc/extensions/node_modules/coc-r-lsp/package.json'))
 	autocmd VimEnter * CocInstall coc-r-lsp
 endif
@@ -87,11 +91,24 @@ if !filereadable(expand('~/.config/coc/extensions/node_modules/coc-python/packag
 	autocmd VimEnter * CocInstall coc-python
 endif
 
+
+" Theme setting
+colorscheme solarized8_flat
+let g:airline_theme='silver'
+
+" Transpearancy
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+
+" Indicate 80 characters
 highlight ColorColumn ctermbg=white
 call matchadd('ColorColumn', '\%81v', 100)
 
+" Get rid of tilda at the end of file
+au ColorScheme * highlight EndOfBuffer ctermfg=black ctermbg=none
+
 set signcolumn=no
-set updatetime=1000
+set updatetime=500
 set background="light"
 set go=a
 set mouse=a
@@ -100,8 +117,13 @@ set nowrap
 set hidden
 set noshowmode
 set cmdheight=2
+
 set clipboard+=unnamedplus
+
+" No highlit into normal mode
 nnoremap <silent><ESC> :noh<CR><ESC>
+
+" Map arrows keys to moving to beginning/end of line
 imap <Left> <ESC>^
 inoremap <Right> <ESC>$
 nmap <Left> ^
@@ -112,21 +134,10 @@ vnoremap <Right> $<Left>
 " Convert tab to spaces
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
-colorscheme solarized8_flat
 
-" Transpearancy
-au ColorScheme * hi Normal ctermbg=none guibg=none
-au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
-
-" Get rid of tilda
-au ColorScheme * highlight EndOfBuffer ctermfg=black ctermbg=none
-
-" let g:airline_theme='solarized'
-" let g:airline_solarized_bg='light'
-let g:airline_theme='silver'
 " Some basics:
- 	nnoremap T :tabedit ./
-	nnoremap c "_c
+ 	" nnoremap T :tabedit ./
+	" nnoremap c "_c
     xnoremap <expr> p 'pgv"'.v:register.'y'
 	set nocompatible
 	filetype plugin on
@@ -135,7 +146,7 @@ let g:airline_theme='silver'
 	set number relativenumber
     " Set v$ to not include new line
     nnoremap v$ v$h
-    " Set db to also delete the current character
+    " Set db to also delete the current word
     nnoremap db db2x
     " Map O to non-insert
     nnoremap O O<ESC>
@@ -149,16 +160,23 @@ let g:airline_theme='silver'
     set ignorecase
     set smartcase
     set shiftround
+
     " Add quotes for meancomma separated lists
-    vmap <silent> gw :s/\%V\([ A-Za-z()]\+\)\(,* *\)\%V/"\1"\2/g<CR>
+    " vmap <silent> gw :s/\%V\([ A-Za-z()]\+\)\(,* *\)\%V/"\1"\2/g<CR>
+    vmap <silent> gw :s/\%V\([^,]\+\)\(, \)\?\%V/"\1"\2/g<CR>
     " Automatically correct spelling errors
     nnoremap <silent> z= z=1<CR><CR>
+    " Show correction options
     nnoremap <silent> z+ z=
+
+    " Space after comma
     inoremap , ,<Space>
+
     " Auto-save
     let g:auto_save = 1
     let g:auto_save_in_insert_mode = 0
     let g:auto_save_silent = 1
+    let g:auto_save_events = ["InsertLeave", "TextChanged"]
     set noswapfile
     function! CommandCabbr(abbreviation, expansion)
     execute 'cabbr ' . a:abbreviation . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "' . a:expansion . '" : "' . a:abbreviation . '"<CR>'
@@ -175,6 +193,8 @@ let g:airline_theme='silver'
 	map <silent> <leader>g :Goyo \| set bg=light \| set linebreak<CR>
     autocmd Filetype markdown autocmd! User GoyoEnter Limelight
     autocmd Filetype markdown autocmd! User GoyoLeave Limelight!
+    let g:limelight_conceal_ctermfg = 'gray'
+
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_gb<CR>
@@ -215,7 +235,7 @@ let g:airline_theme='silver'
 " " Use <ESC> to exit terminal
 "     tnoremap <Esc> <C-\><C-n>
 " Maximize current buffer
-    nnoremap <silent>,f <C-w>K<C-w>_
+    nnoremap <silent> <leader>f <C-w>K<C-w>_
 
 " Adjust buffer sizes
     nnoremap <silent>,r :windo wincmd K<CR>:windo wincmd K<CR>:resize 28<CR>
@@ -275,12 +295,6 @@ let g:airline_theme='silver'
     inoremap ) )<ESC>
     inoremap ] ]<ESC>
 
-    " inoremap <silent> <expr> " (getline('.')[col('.')]=~"\[A-Za-z\]" || getline('.')[col('.') - 2]=~"\[A-Za-z\]" ? '"<ESC>' : '""<left>')
-
-    " inoremap <silent><expr> "
-    "     \ getline('.')[col('.')]=~"\[A-Za-z\]" ? '"<ESC>' :
-    "     \ getline('.')[col('.') - 2]=~"\[A-Za-z\]" ? '"<ESC>' :
-    "     \ '""<left>'
 
     autocmd Filetype r,rmd,python,haskell inoremap <silent><expr> "
         \ getline('.')[col('.') - 1]=~"\[A-Za-z\]" ? '"<ESC>' :
@@ -291,23 +305,6 @@ let g:airline_theme='silver'
     inoremap <expr> <BS> (getline('.')[col('.')-2: col('.')-1]=~"()" \|\|
                 \ getline('.')[col('.')-2: col('.')-1]=~"[]" \|\|
                 \ getline('.')[col('.')-2: col('.')-1]=~"{}" ? "<right><BS><BS>" : "<BS>")
-
-    function! MoveClosingBracketRight()
-        if getline('.')[col('.')]==')'
-            execute "normal! a\<right>\<BS>\<ESC>ea)\<left>"
-        elseif getline('.')[col('.')]==']'
-            execute "normal! a\<right>\<BS>\<ESC>ea]\<left>"
-        elseif getline('.')[col('.')]=='}'
-            execute "normal! a\<right>\<BS>\<ESC>ea}\<left>"
-        elseif getline('.')[col('.')]=='"'
-            execute "normal! a\<right>\<BS>\<ESC>ea\"\<left>"
-        endif
-    endfunction
-
-
-    " inoremap <silent> <expr> <C-l> (getline('.')[col('.')-1]=~"[)\|}\|\|\\]\|\"]" ? "<ESC>:call MoveClosingBracketRight()<CR>a" : "<C-l>")
-    " inoremap <silent> <expr> <C-h> (getline('.')[col('.')-1]=~"[)\|}\|\|\\]\|\"]" ? "<ESC>:call MoveClosingBracketLeft()<CR>a" : "<C-h>")
-    " inoremap <silent> <expr> L (getline('.')[col('.')-1]=~"[)\|}\|\|\\]\|\"]" ? "<ESC>:call MoveClosingBracketLineEnd()<CR>a" : "L")
 
 " Cheatsheet settings
     let g:cheat40_use_default = 0
@@ -327,18 +324,8 @@ let g:airline_theme='silver'
     autocmd Filetype r,rmd nnoremap gb Obrowser()<ESC>==
     " Close R buffer on exiting vim
     autocmd Filetype r,rmd nnoremap <silent><expr> Z (len(getbufinfo({'buflisted':1})))== 1 ? "ZZZZ" : "ZZ"
-    autocmd Filetype r,rmd nmap <silent> gf /<- function(.*)<CR>
-    autocmd Filetype r,rmd nmap <silent> gF ?<- function(.*)<CR>
     " Disable R terminal color
     let R_hl_term = 0
-    " let R_app = "radian"
-    " let R_cmd = "R"
-    " let R_args = []
-    " let R_bracketed_paste = 1
-    " Use libreoffice to view dataframe
-    let R_csv_app = '/usr/bin/tad'
-    " Shortcut to view dataframe in libreoffice
-    autocmd Filetype r,rmd nnoremap \V :call RAction("viewdf")<CR>
     " Check unique values
     autocmd Filetype r,rmd nmap <silent> gu :call RAction('unique')<CR>
     autocmd Filetype r,rmd vmap <silent> gu :call RAction('unique', 'v')<CR>
@@ -355,10 +342,8 @@ let g:airline_theme='silver'
     " Print
     autocmd Filetype r,rmd map <silent> gp \rp
     " Jump to next function
-    autocmd Filetype r,rmd nnoremap <silent> [f / <- function(<CR>
-    autocmd Filetype r,rmd nnoremap <silent> ]f ? <- function(<CR>
-    " Let R show objects in function argument completion
-    let R_complete = 2
+    autocmd Filetype r,rmd nmap <silent> [f /<- function(.*)<CR>
+    autocmd Filetype r,rmd nmap <silent> ]F ?<- function(.*)<CR>
     " Map Enter to run selection in visual mode
     autocmd FileType r vmap <CR> \ss
     autocmd FileType rmd vmap <CR> \ss
@@ -375,7 +360,6 @@ let g:airline_theme='silver'
     " Map <CR> to run line and down
     autocmd Filetype r,rmd nmap <silent> <CR> \d
     autocmd Filetype r nmap <silent> <F5> \su
-    autocmd Filetype r imap <silent> <F5> \su
 
 " Rmarkdown settings
     " Load template for rmd
@@ -391,33 +375,10 @@ let g:airline_theme='silver'
 
 " Python
 
-    function! SendlinetoPython()
-    if search("^[^ \r]", "Wn") != 0
-        if getline(line('.'))[0:3] =~ "for"
-        execute "normal V/^[^ \\r]\<CR>?.\<CR>j\<Space>/^[^ \\r]\<CR>"
-        elseif getline(line('.'))[0:3] !~ "for"
-        if getline(line('.'))[0] == ""
-        execute "normal V\<Space>/^[^ \\r]\<CR>"
-        else
-        execute "normal V/^[^ \\r]\<CR>?.\<CR>\<Space>/^[^ \\r]\<CR>:noh\<CR>:\<ESC>"
-        endif
-        endif
-    else
-        if getline(line('.'))[0:3] =~ "for"
-        execute "normal VG\<Space>:noh\<CR>:\<ESC>G"
-        elseif getline(line('.'))[0:3] !~ "for"
-        if getline(line('.'))[0] == ""
-        execute "normal V\<Space>j"
-        else
-        " execute "normal VG?.\<CR>\<Space>G:noh\<CR>:\<ESC>"
-        execute "normal VG\<Space>"
-        endif
-        endif
-    endif
-    endfunction
-
-    " Run line
-    autocmd Filetype python nnoremap <silent> <buffer> <CR> :silent call SendlinetoPython()<CR>
+    " autocmd Filetype python map <CR> :NotebookEvaluate<CR>
+     " let g:notebook_highlight = 1
+    " " Run line
+    " autocmd Filetype python nnoremap <silent> <buffer> <CR> :silent call SendlinetoPython()<CR>
     " Run from beginning
     autocmd Filetype python nmap <silent> <F17> maVgg<CR>'a
     " Run selection
@@ -479,21 +440,22 @@ let g:airline_theme='silver'
     let $ZCitationTemplate = '{Authors}_{Year}_{Title}'
     nmap <space> <Plug>ZCitationInfo
 
-" Citation.vim
-    let g:unite_enable_split_vertically = 1
-    let g:citation_vim_mode="zotero"
-    let g:citation_vim_zotero_path="~/Zotero"
-    let g:citation_vim_zotero_version=5
-    " Remeber need to create cache directory first
-    let g:citation_vim_cache_path='~/.vim/cache'
-    let g:citation_vim_et_al_limit=3
-    nnoremap <silent> <M-c> :<C-u>exec "Unite  -default-action=append citation/key:" . escape(input('Search Key : '),' ') <cr>
-    autocmd Filetype rmd let g:citation_vim_key_format = "{zotero_key}#{author}_{title}_{date}"
-    autocmd Filetype markdown let g:citation_vim_key_format = "{author}_{title}_{date}"
+" " Citation.vim
+"     let g:unite_enable_split_vertically = 1
+"     let g:citation_vim_mode="zotero"
+"     let g:citation_vim_zotero_path="~/Zotero"
+"     let g:citation_vim_zotero_version=5
+"     " Remeber need to create cache directory first
+"     let g:citation_vim_cache_path='~/.vim/cache'
+"     let g:citation_vim_et_al_limit=3
+"     nnoremap <silent> <M-c> :<C-u>exec "Unite  -default-action=append citation/key:" . escape(input('Search Key : '),' ') <cr>
+"     autocmd Filetype rmd let g:citation_vim_key_format = "{zotero_key}#{author}_{title}_{date}"
+"     autocmd Filetype markdown let g:citation_vim_key_format = "{author}_{title}_{date}"
 
 " Markdown
     let g:mkdp_browser = ''
     let g:mkdp_page_title = ''
+    let g:mkdp_command_for_global = 1
     autocmd BufNewFile,BufRead *.md set textwidth=80
     autocmd BufNewFile,BufRead *.md set wrapmargin=0
     autocmd BufNewFile,BufRead *.md set formatoptions+=t
@@ -558,6 +520,7 @@ let $Zotcite_exclude = "note attachment"
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 
+" Coc completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -579,17 +542,15 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-let g:mkdp_command_for_global = 1
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
-set updatetime=500
-
-let g:limelight_conceal_ctermfg = 'gray'
-
+" Vimwiki
 let g:vimwiki_list = [{'path':'~/Yandex.Disk/VimWiki', 'path_html':'~/Yandex.Disk/VimWiki/exports'}]
 
 " fzf
 nnoremap <Leader>s :Rg<CR>
 
-command Q :Git commit
-
+" Replace word in entire file
 nnoremap <Leader>n :%s/\<<c-r><c-w>\>//g\|norm!``<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set enc=utf8
+set fencs=utf8,gbk,gb2312,gb18030

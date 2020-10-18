@@ -10,3 +10,5 @@ bash autologin.sh
 cd ..
 cd Theme
 bash ./theme.sh
+
+

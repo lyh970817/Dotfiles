@@ -26,6 +26,8 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+git add
+
 fcitx -d &
 autobluetooth &
 dunst &
@@ -34,7 +36,7 @@ xcompmgr &
 unclutter &
 yandex-disk start &
 ibus-daemon -drx &
-onedrive --syncdir ~/Yandex.Disk/Project/Research/GLAD/Papers --monitor &
+onedrive --syncdir ~/OneDrive --monitor &
 if [[ $(iseink) -eq 1 ]];then
     eink &
 else

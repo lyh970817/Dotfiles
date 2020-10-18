@@ -26,6 +26,8 @@ super + shift + ctrl + e
 	eink
 super + shift + ctrl + l
 	laptop
+super + shift + ctrl + p
+	projector
 super + Print
 	dmenurecord
 super + Delete

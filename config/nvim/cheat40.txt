@@ -1,25 +1,33 @@
 Press q to dismiss, <Tab> to lose focus
 
-File {{{1
+General {{{1
 New/open file or dir     :e …          N
-Open Unite File          «M-f»         N
-Current directory        :pwd          N
-Change directory         :cd …         N
+Nerd tree                <F3>          N
+Replace                  S             N
+Bash split               <F1>          N
+In-file search           :Rg           N
+Replace all instances    <leader>n     N
 }}}
 R and Rmarkdown {{{1
 Show documentation       gh            N
 Print                    gp            N
-View structure           gs            N
+View structure           gS            N
+View names               gs            N
 Df unique values         gU            N
 Vector unique values     gu            N
 Comment out              gc            N
+Load project             gl            N
+Load package             gL            N
+Insert browser           gb            N
+Next function            gf            N
+Previous function        gF            N
+Delete `browser` in dir  <leader>db    N
 Run current chunk        «F4»          N
 Run current chunk(down)  «F5»          N
 Run all chunks above     «S-F5»        N
 Knit                     «C-k»         N
-Jump to definition       gd           *N
-To prev jump position    «C-o»         N
-To next jump position    «C-i»         N
+Stop                     «C-c»         N
+Jump to definition       gd/gD         *N
 To next lintr error      «C-l»         N
 To prev lintr error      «C-h»         N
 }}}
@@ -27,9 +35,12 @@ Markdown  {{{1
 Citation search          «C-c»         N
 Citation information     «space»       N
 Table of content         «C-t»         N
+Goyo mode                <Leader>g     N
+Spell check              <Leader>o     N
 To next misspelled word  ]s            N
 To prev misspelled word  [s            N
-Suggest corrections      z=           *N
+Correct current word     z=           *N
+Suggest corrections      z+           *N
 Add current word to dict zg           *N
 Delete current word      zug          *N
 }}}

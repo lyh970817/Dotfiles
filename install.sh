@@ -177,4 +177,5 @@ R -e 'install.packages("prettydoc")'
 
 sudo pacman -S --noconfirm vlc
 sudo pacman -S --noconfirm qbittorrent
-
+yaourt -S --noconfirm electron4-bin
+yaourt -S --noconfirm dingtalk-electron
