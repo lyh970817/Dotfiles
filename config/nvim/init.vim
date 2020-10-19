@@ -1,8 +1,5 @@
 let mapleader =","
-if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ~/.config/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim autocmd VimEnter * PlugInstall
+if ! filereadable(expand('~/.config/nvim/autoload/plug.vim')) echo "Downloading junegunn/vim-plug to manage plugins..." silent !mkdir -p ~/.config/nvim/autoload/ silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.config/nvim/plugged') " Colorscheme support
@@ -20,16 +17,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'voldikss/vim-mma'
 
 " Notebook
-Plug 'baruchel/vim-notebook'
+" Plug 'baruchel/vim-notebook'
 
 " R
 " Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'jalvesaq/Nvim-R'
-
-" Python
-" Plug 'jeetsukumaran/vim-pythonsense'
-" Plug 'fs111/pydoc.vim'
-Plug 'vim-scripts/indentpython.vim'
 
 " lintr
 Plug 'dense-analysis/ale'
@@ -96,9 +88,7 @@ endif
 colorscheme solarized8_flat
 let g:airline_theme='silver'
 
-" Transpearancy
-au ColorScheme * hi Normal ctermbg=none guibg=none
-au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+" Transpearancy au ColorScheme * hi Normal ctermbg=none guibg=none au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " Indicate 80 characters
 highlight ColorColumn ctermbg=white
@@ -281,7 +271,6 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     set completeopt-=noselect
     set shortmess+=c
 
-    " Need to comment out kite mapping (pop exit <CR>) in ~/.config/nvim/pack/kite/autoload/kite.vim
     set pumheight=7
     set previewheight=5
     let g:UltiSnipsExpandTrigger="<M-e>"
@@ -301,7 +290,6 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
         \ getline('.')[col('.') - 2]=~"\[A-Za-z\]" ? '"<ESC>' :
         \ '""<left>'
 
-    " inoremap <expr> <BS> (getline('.')[col('.')-2: col('.')-1]=~"()" || getline('.')[col('.')-2: col('.')-1]=~"[]" || getline('.')[col('.')-2: col('.')-1]=~"{}" ? "<right><BS><BS>" : "<BS>")
     inoremap <expr> <BS> (getline('.')[col('.')-2: col('.')-1]=~"()" \|\|
                 \ getline('.')[col('.')-2: col('.')-1]=~"[]" \|\|
                 \ getline('.')[col('.')-2: col('.')-1]=~"{}" ? "<right><BS><BS>" : "<BS>")
@@ -375,10 +363,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 " Python
 
-    " autocmd Filetype python map <CR> :NotebookEvaluate<CR>
-     " let g:notebook_highlight = 1
-    " " Run line
-    " autocmd Filetype python nnoremap <silent> <buffer> <CR> :silent call SendlinetoPython()<CR>
+    autocmd Filetype python map <CR> V}k<Space>}
     " Run from beginning
     autocmd Filetype python nmap <silent> <F17> maVgg<CR>'a
     " Run selection
@@ -497,7 +482,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     let g:ale_warn_about_trailing_whitespace = 0
     let g:ale_lint_delay = 200
     let g:ale_lint_on_insert_leave = 1
-    autocmd Filetype python let b:ale_fixers = ['yapf']
+    " autocmd Filetype python let b:ale_fixers = ['yapf']
     autocmd Filetype r,rmd let b:ale_fixers = ['styler']
     autocmd Filetype r,rmd let b:ale_lintr = ['lintr']
     let g:ale_set_highlights = 1
@@ -554,3 +539,4 @@ nnoremap <Leader>n :%s/\<<c-r><c-w>\>//g\|norm!``<Left><Left><Left><Left><Left><
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set enc=utf8
 set fencs=utf8,gbk,gb2312,gb18030
+

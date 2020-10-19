@@ -208,7 +208,7 @@ bindsym $mod+Shift+Ctrl+u exec --no-startup-id pactl set-sink-mute 0 false && pa
 bindsym $mod+Shift+Ctrl+d exec --no-startup-id pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%
 bindsym $mod+Shift+Ctrl+m exec --no-startup-id pactl set-sink-mute 0 true
 
-# bindsym $mod+t exec --no-startup-id notify-send "$(date)"
+bindsym $mod+t exec --no-startup-id notify-send "$(date)"
 # bar toggle
 
 # bar toggle, hide or show
