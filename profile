@@ -34,6 +34,7 @@ QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=@im=fcitx
 
 # Commit setup
+
 git -C $ARSETUP add \* && git -C $ARSETUP commit -m "start-up commit" && git -C $ARSETUP push
 
 # Autostart X

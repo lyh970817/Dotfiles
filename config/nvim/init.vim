@@ -59,8 +59,6 @@ Plug 'sirver/UltiSnips'
 Plug 'lifepillar/vim-cheat40'
 
 " Citation support
-Plug 'Shougo/unite.vim'
-Plug 'rafaqz/citation.vim'
 Plug 'jalvesaq/zotcite'
 
 " Markdown
@@ -85,11 +83,11 @@ endif
 
 
 " Theme setting
-colorscheme solarized8_flat
+colorscheme bow-wob
 let g:airline_theme='silver'
 
-"" Transpearancy 
-au ColorScheme * hi Normal ctermbg=none guibg=none 
+"" Transpearancy
+au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 "" Indicate 80 characters
@@ -97,7 +95,7 @@ highlight ColorColumn ctermbg=white
 call matchadd('ColorColumn', '\%81v', 100)
 
 "" Get rid of tilda at the end of file
-au ColorScheme * highlight EndOfBuffer ctermfg=black ctermbg=none
+au ColorScheme * highlight EndOfBuffer ctermfg=white ctermbg=none
 
 set signcolumn=no
 set updatetime=500
@@ -364,8 +362,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     autocmd Filetype rmd nmap gk \kr
 
 " Python
-
-    autocmd Filetype python map <CR> V}k<Space>}
+    autocmd Filetype python let cmdline_map_send_paragraph = '<CR>'
     " Run from beginning
     autocmd Filetype python nmap <silent> <F17> maVgg<CR>'a
     " Run selection
@@ -427,17 +424,8 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     let $ZCitationTemplate = '{Authors}_{Year}_{Title}'
     nmap <space> <Plug>ZCitationInfo
 
-" " Citation.vim
-"     let g:unite_enable_split_vertically = 1
-"     let g:citation_vim_mode="zotero"
-"     let g:citation_vim_zotero_path="~/Zotero"
-"     let g:citation_vim_zotero_version=5
-"     " Remeber need to create cache directory first
-"     let g:citation_vim_cache_path='~/.vim/cache'
-"     let g:citation_vim_et_al_limit=3
-"     nnoremap <silent> <M-c> :<C-u>exec "Unite  -default-action=append citation/key:" . escape(input('Search Key : '),' ') <cr>
-"     autocmd Filetype rmd let g:citation_vim_key_format = "{zotero_key}#{author}_{title}_{date}"
-"     autocmd Filetype markdown let g:citation_vim_key_format = "{author}_{title}_{date}"
+let $ZoteroSQLpath = '/home/lyh970817/Zotero/zotero.sqlite'
+let $Zotcite_exclude = "note attachment"
 
 " Markdown
     let g:mkdp_browser = ''
@@ -500,8 +488,6 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 " au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
 
 set t_Co=256
-let $ZoteroSQLpath = '/home/lyh970817/Zotero/zotero.sqlite'
-let $Zotcite_exclude = "note attachment"
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
