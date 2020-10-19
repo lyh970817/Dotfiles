@@ -1,10 +1,11 @@
 let mapleader =","
-if ! filereadable(expand('~/.config/nvim/autoload/plug.vim')) echo "Downloading junegunn/vim-plug to manage plugins..." silent !mkdir -p ~/.config/nvim/autoload/ silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim autocmd VimEnter * PlugInstall
+if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+    echo "Downloading junegunn/vim-plug to manage plugins..." silent !mkdir -p ~/.config/nvim/autoload/ silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.config/nvim/plugged') " Colorscheme support
 
-" Themes
+" " Themes
 Plug 'p7g/vim-bow-wob'
 Plug 'lifepillar/vim-solarized8'
 Plug 'Yggdroot/indentLine'
@@ -20,7 +21,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'baruchel/vim-notebook'
 
 " R
-" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'jalvesaq/Nvim-R'
 
 " lintr
@@ -88,13 +88,15 @@ endif
 colorscheme solarized8_flat
 let g:airline_theme='silver'
 
-" Transpearancy au ColorScheme * hi Normal ctermbg=none guibg=none au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+"" Transpearancy 
+au ColorScheme * hi Normal ctermbg=none guibg=none 
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
-" Indicate 80 characters
+"" Indicate 80 characters
 highlight ColorColumn ctermbg=white
 call matchadd('ColorColumn', '\%81v', 100)
 
-" Get rid of tilda at the end of file
+"" Get rid of tilda at the end of file
 au ColorScheme * highlight EndOfBuffer ctermfg=black ctermbg=none
 
 set signcolumn=no
