@@ -93,7 +93,7 @@ endif
 
 
 " Theme setting
-colorscheme bow-wob
+colorscheme solarized8_flat
 let g:airline_theme='silver'
 
 " Transpearancy
@@ -105,7 +105,7 @@ highlight ColorColumn ctermbg=white
 call matchadd('ColorColumn', '\%81v', 100)
 
 " Get rid of tilda at the end of file
-au ColorScheme * highlight EndOfBuffer ctermfg=white ctermbg=none
+au ColorScheme * highlight EndOfBuffer ctermfg=black ctermbg=none
 
 set signcolumn=no
 set updatetime=500
