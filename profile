@@ -28,9 +28,9 @@ export LESS_TERMCAP_se="$(printf '%b' '[0m')"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 
-GTK_IM_MODULE DEFAULT=fcitx
-QT_IM_MODULE  DEFAULT=fcitx
-XMODIFIERS    DEFAULT=@im=fcitx
+# export GTK_IM_MODULE DEFAULT=fcitx
+# export QT_IM_MODULE  DEFAULT=fcitx
+# export XMODIFIERS    DEFAULT=@im=fcitx
 
 # Commit setup
 
