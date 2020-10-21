@@ -2,7 +2,6 @@
 export PATH="$PATH:"$HOME/.local/bin/""
 export PATH="$PATH:"$HOME/.local/share/""
 export PATH="$PATH:"$HOME/.config/nvim/plugged/zotcite/python3""
-
 # Default programs:
 export VISUAL="nvim"
 export EDITOR=$VISUAL
