@@ -24,7 +24,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jalvesaq/Nvim-R'
 
 " lintr
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'rhysd/vim-grammarous'
 
 " Plug 'junegunn/vim-easy-align'
@@ -198,8 +198,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Replace all is aliased to S.
-	nnoremap S :s//g<Left><Left>
-	vmap S :s//g<Left><Left>
+    nmap S :s/<c-r>=expand("<cword>")<cr>//g<left><left>
 
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
@@ -209,9 +208,6 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
-
-" Automatically deletes all trailing whitespace on save.
-	autocmd BufWritePre * %s/\s\+$//e
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost files,directories !shortcuts
@@ -331,7 +327,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     autocmd Filetype r,rmd map <silent> gp \rp
     " Jump to next function
     autocmd Filetype r,rmd nmap <silent> [f /<- function(.*)<CR>
-    autocmd Filetype r,rmd nmap <silent> ]F ?<- function(.*)<CR>
+    autocmd Filetype r,rmd nmap <silent> ]f ?<- function(.*)<CR>
     " Map Enter to run selection in visual mode
     autocmd FileType r vmap <CR> \ss
     autocmd FileType rmd vmap <CR> \ss
@@ -522,7 +518,7 @@ let g:vimwiki_list = [{'path':'~/Yandex.Disk/VimWiki', 'path_html':'~/Yandex.Dis
 nnoremap <Leader>s :Rg<CR>
 
 " Replace word in entire file
-nnoremap <Leader>n :%s/\<<c-r><c-w>\>//g\|norm!``<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+nnoremap <Leader>S :%s/\<<c-r><c-w>\>//g\|norm!``<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set enc=utf8
