@@ -24,7 +24,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jalvesaq/Nvim-R'
 
 " lintr
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'rhysd/vim-grammarous'
 
 " Plug 'junegunn/vim-easy-align'
