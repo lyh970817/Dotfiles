@@ -15,10 +15,10 @@ Plug 'vim-airline/vim-airline-themes'
 " Language Support
 Plug 'jalvesaq/vimcmdline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'voldikss/vim-mma'
+Plug 'voldikss/vim-mma'
 
 " Notebook
-" Plug 'baruchel/vim-notebook'
+Plug 'baruchel/vim-notebook'
 
 " R
 Plug 'jalvesaq/Nvim-R'
@@ -68,7 +68,7 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-" Autoinstall coc plugins
+"" Autoinstall coc plugins
 if !filereadable(expand('~/.config/coc/extensions/node_modules/coc-r-lsp/package.json'))
 	autocmd VimEnter * CocInstall coc-r-lsp
 endif
