@@ -6,7 +6,6 @@ pamac install i3
 
 # Wallpaper
 sudo pacman -S --noconfirm feh
-
 sudo pacman -S --noconfirm curl
 
 sudo pacman -S --noconfirm xorg
