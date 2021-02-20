@@ -34,9 +34,6 @@ sudo pacman -S --noconfirm lxappearance
 sudo pacman -S --noconfirm gnome-themes-extra
 yaourt -S --noconfirm gtk-theme-numix-solarized
 
-# Browser
-sudo pacman -S --noconfirm qutebrowser
-
 # R
 sudo pacman -S --noconfirm r
 
@@ -115,7 +112,6 @@ sudo pacman -S --noconfirm python-pip
 sudo pacman -S --noconfirm gcc-fortran
 sudo pacman -S --noconfirm imagemagick
 sudo pacman -S --noconfirm tk
-sudo pip install radian
 sudo pip install ipython
 sudo pip install pandas
 sudo pip install numpy
@@ -132,7 +128,6 @@ yaourt -S --noconfirm python-filetype
 yaourt -S --noconfirm python-habanero
 yaourt -S --noconfirm python-isbnlib
 yaourt -S --noconfirm python-pylibgen
-yaourt -S --noconfirm papis
 
 
 sudo pacman -S --noconfirm xprintidle
@@ -150,13 +145,10 @@ yaourt -S --noconfirm libfpx
 yaourt -S --noconfirm libumem-git
 yaourt -S --noconfirm brunsli
 
-yaourt -S --noconfirm brave-bin
+yaourt -S --noconfirm brave-nightly
 
 yaourt -S --noconfirm googlepinyin
 yaourt -S --noconfirm sougoupinyin
-# sudo pacman -S --noconfirm vivaldi
-# sudo /opt/vivaldi/update-ffmpeg
-# sudo /opt/vivaldi/update-widevine
 
 yaourt -S --noconfirm mimeo
 yaourt -S --noconfirm vidir
@@ -178,3 +170,7 @@ sudo pacman -S --noconfirm vlc
 sudo pacman -S --noconfirm qbittorrent
 yaourt -S --noconfirm electron4-bin
 yaourt -S --noconfirm dingtalk-electron
+
+# archlinuxcn
+
+# tzupdate
