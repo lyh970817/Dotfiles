@@ -32,7 +32,7 @@ dunst &
 sxhkd &
 xcompmgr &
 unclutter &
-yandex-disk start &
+yandex-disk start --proxy socks5,127.0.0.1,1089 &
 ibus-daemon -drx &
 onedrive --syncdir ~/OneDrive --monitor &
 
