@@ -1,9 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 
 if [[ $http_proxy == "" ]]; 
 then 
-    export http_proxy=http://127.0.0.1:8889
-    export https_proxy=https://127.0.0.1:8889
+    export http_proxy=http://127.0.0.1:1081
+    export https_proxy=https://127.0.0.1:1081
 else
     unset http_proxy
     unset https_proxy
