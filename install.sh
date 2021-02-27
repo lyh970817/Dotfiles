@@ -146,9 +146,7 @@ yaourt -S --noconfirm libumem-git
 yaourt -S --noconfirm brunsli
 
 yaourt -S --noconfirm brave-nightly
-
-yaourt -S --noconfirm googlepinyin
-yaourt -S --noconfirm sougoupinyin
+yaourt -S --noconfirm chromium
 
 yaourt -S --noconfirm mimeo
 yaourt -S --noconfirm vidir
@@ -167,6 +165,7 @@ R -e 'install.packages("devtools")'
 R -e 'install.packages("prettydoc")'
 
 sudo pacman -S --noconfirm vlc
+sudo pacman -S --noconfirm mpv
 sudo pacman -S --noconfirm qbittorrent
 yaourt -S --noconfirm electron4-bin
 yaourt -S --noconfirm dingtalk-electron
@@ -174,3 +173,10 @@ yaourt -S --noconfirm dingtalk-electron
 # archlinuxcn
 
 # tzupdate
+
+sudo pacman -S --noconfirm blueman
+sudo pacman -S --noconfirm fcitx
+sudo pacman -S --noconfirm fcitx-configtool
+sudo pacman -S --noconfirm fcitx-googlepinyin
+sudo pacman -S --noconfirm freedownloadmanager
+
