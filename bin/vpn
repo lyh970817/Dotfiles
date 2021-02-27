@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
 
-export http_proxy=http://127.0.0.1:8889
-export https_proxy=https://127.0.0.1:8889
+if [[ $http_proxy == "" ]]; 
+then 
+    export http_proxy=http://127.0.0.1:8889
+    export https_proxy=https://127.0.0.1:8889
+else
+    unset http_proxy
+    unset https_proxy
+fi
+

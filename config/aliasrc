@@ -15,6 +15,5 @@ alias \
 	e="$EDITOR" \
 	p="pamac" \
     r="R" \
-    vpn="source vpn" \
 
 
