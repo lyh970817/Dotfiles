@@ -10,6 +10,8 @@ ln -s $(pwd)/zprofile $HOME/.zprofile
 ln -s $(pwd)/xinitrc $HOME/.xinitrc
 ln -s $(pwd)/Rprofile $HOME/.Rprofile
 ln -s $(pwd)/gitconfig $HOME/.gitconfig
+sudo ln -s $(pwd)/etc/zsh/zshenv /etc/zsh/zshenv
+
 
 mkdir $HOME/.tmp
 rm $HOME/.bash_logout $HOME/.bash_profile

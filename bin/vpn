@@ -1,11 +1,17 @@
 #!/usr/bin/env zsh
 
-if [[ $http_proxy == "" ]]; 
+ZSHENV=$ARSETUP/etc/zsh/zshenv
+
+if grep -Fq 'export http_proxy' $ZSHENV; 
 then 
-    export http_proxy=http://127.0.0.1:1081
-    export https_proxy=https://127.0.0.1:1081
+    sed -i '/http_proxy/d' $ZSHENV 
+    sed -i '/https_proxy/d' $ZSHENV 
+    echo 'unset http_proxy' >> $ZSHENV
+    echo 'unset https_proxy' >> $ZSHENV
 else
-    unset http_proxy
-    unset https_proxy
+    sed -i '/http_proxy/d' $ZSHENV 
+    sed -i '/https_proxy/d' $ZSHENV 
+    echo 'export http_proxy=https://127.0.0.1:1081' >> $ZSHENV
+    echo 'export https_proxy=https://127.0.0.1:1081' >> $ZSHENV
 fi
 

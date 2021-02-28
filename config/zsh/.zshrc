@@ -95,6 +95,3 @@ xset r rate 250 60
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # [[ -z $(ps -aux|pgrep yandex) ]] && yandex-disk start >/dev/null
-
-export http_proxy=http://127.0.0.1:1081
-export https_proxy=https://127.0.0.1:1081
