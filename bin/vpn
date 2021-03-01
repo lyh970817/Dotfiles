@@ -8,10 +8,12 @@ then
     sed -i '/https_proxy/d' $ZSHENV 
     echo 'unset http_proxy' >> $ZSHENV
     echo 'unset https_proxy' >> $ZSHENV
+    notify-send "VPN OFF"
 else
     sed -i '/http_proxy/d' $ZSHENV 
     sed -i '/https_proxy/d' $ZSHENV 
     echo 'export http_proxy=https://127.0.0.1:1081' >> $ZSHENV
     echo 'export https_proxy=https://127.0.0.1:1081' >> $ZSHENV
+    notify-send "VPN ON"
 fi
 
