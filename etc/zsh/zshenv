@@ -1,2 +1,14 @@
-export http_proxy=https://127.0.0.1:1081
-export https_proxy=https://127.0.0.1:1081
+unset http_proxy
+unset https_proxy
+
+
+export http_proxy="http://http://127.0.0.1:1081/"
+export ftp_proxy="ftp://http://127.0.0.1:1081/"
+export rsync_proxy="rsync://http://127.0.0.1:1081/"
+export no_proxy="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export HTTP_PROXY="http://http://127.0.0.1:1081/"
+export FTP_PROXY="ftp://http://127.0.0.1:1081/"
+export RSYNC_PROXY="rsync://http://127.0.0.1:1081/"
+export NO_PROXY="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export https_proxy="http://http://127.0.0.1:1081/"
+export HTTPS_PROXY="http://http://127.0.0.1:1081/"
