@@ -2,7 +2,10 @@
 
 sh ./pamac.sh
 
-pamac install i3
+sudo pacman -S i3-gaps
+sudo pacman -S i3-wm
+sudo pacman -S i3-blocks
+sudo pacman -S i3-lock
 
 # Wallpaper
 sudo pacman -S --noconfirm feh
@@ -179,4 +182,9 @@ sudo pacman -S --noconfirm fcitx
 sudo pacman -S --noconfirm fcitx-configtool
 sudo pacman -S --noconfirm fcitx-googlepinyin
 sudo pacman -S --noconfirm freedownloadmanager
+
+# vpn
+sudo pacman -S --noconfirm v2ray
+git clone https://github.com/iochen/v2gen/ && cd v2gen
+env GOPRIVATE=github.com/v2ray/v2ray-core go build ./cmd/v2gen
 
