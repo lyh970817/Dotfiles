@@ -1,5 +1,3 @@
-#! /bin/bash
-
 sh ./pamac.sh
 
 sudo pacman -S i3-gaps

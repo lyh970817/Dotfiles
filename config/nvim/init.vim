@@ -81,6 +81,9 @@ if !filereadable(expand('~/.config/coc/extensions/node_modules/coc-python/packag
 	autocmd VimEnter * CocInstall coc-python
 endif
 
+if !filereadable(expand('~/.config/coc/extensions/node_modules/coc-sh/package.json'))
+	autocmd VimEnter * CocInstall coc-sh
+endif
 
 " Theme setting
 colorscheme solarized8_flat
