@@ -1,0 +1,116 @@
+i3-gaps
+i3-wm
+i3-blocks
+i3-lock
+
+# Wallpaper
+feh
+curl
+
+xorg
+xorg-xinit
+x-server
+
+# Font
+ttf-fira-code
+powerline-fonts
+wqy-zenhei
+
+# light control
+light
+
+# search
+fzf
+
+# ssh
+openssh
+
+# GTK setting
+lxappearance
+gnome-themes-extra
+
+# R
+r
+
+# Editor
+neovim
+python-pynvim
+
+# Screenshot
+scrot
+
+# Notification
+dunst
+
+# Font
+otf-fira-code
+
+# Qt use GTK theme
+qt5-styleplugins
+
+# Hotkeys
+sxhkd
+
+# Zathura
+zathura
+zathura-pdf-mupdf
+zathura-pdf-poppler
+zathura-pdf-djvu
+
+# Hide mouse loading
+unclutter
+
+# Transperancy
+xcompmgr
+
+# Clipboard command line
+xclip
+
+# Window manipulation in i3
+xdotool
+
+# Sound
+pactl
+pavucontrol
+
+# unzip
+unzip
+
+# unzip
+arandr
+
+# Install pip
+python-pip
+gcc-fortran
+imagemagick
+tk
+sudopip install ipython
+sudopip install pandas
+sudopip install numpy
+sudopip install matplotlib
+sudopip install autopep8
+
+xprintidle
+pandoc
+pandoc-citeproc
+pandoc-crossref
+texlive-core
+nodejs
+
+chromium
+
+ripgrep
+
+vlc
+mpv
+qbittorrent
+
+blueman
+fcitx
+fcitx-configtool
+fcitx-googlepinyin
+freedownloadmanager
+
+# vpn
+v2ray
+

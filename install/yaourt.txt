@@ -1,0 +1,38 @@
+# Bluetooth keyboard
+obinskit
+
+gtk-theme-numix-solarized
+
+# Yandex-Disk
+yandex-disk
+
+# lf
+lf
+
+# dmenu
+dmenu2
+
+# Zoterao
+zotero
+bibtool
+
+zoom
+
+
+pstoedit-nomagick
+autotrace-nomagick
+flif
+libfpx
+libumem-git
+brunsli
+
+brave-nightly
+
+mimeo
+vidir
+onedrive-abraunegg
+
+nodejs-live-server
+
+electron4-bin
+dingtalk-electron
