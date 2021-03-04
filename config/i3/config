@@ -204,9 +204,9 @@ bindsym $mod+b bar mode toggle
 # Border control
 hide_edge_borders both
 
-exec border 2pixel
+exec border 2 pixel
 
-new_window pixel none
+new_window pixel 2
 new_float pixel 2
 
 #Popups during fullscreen mode

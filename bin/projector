@@ -1,7 +1,7 @@
 #!/bin/sh
 xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
-cp -f $ARSETUP/Xdefaults2 ~/.Xdefaults
+cp -f $ARSETUP/dotfiles/Xdefaults2 ~/.Xdefaults
 
 sed -i 's/colorscheme bow-wob/colorscheme solarized8_flat/' ~/.config/nvim/init.vim
 sed -i 's/highlight EndOfBuffer ctermfg=white/highlight EndOfBuffer ctermfg=black/' ~/.config/nvim/init.vim
