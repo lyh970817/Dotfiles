@@ -477,7 +477,7 @@ let $Zotcite_exclude = "note attachment"
     let g:ale_set_highlights = 1
     nmap <silent> <C-;> <Plug>(ale_previous)
     nmap <silent> <C-,> <Plug>(ale_next)
-    let g:ale_fix_on_save = 1
+    autocmd Filetype r,rmd let g:ale_fix_on_save = 1
     let g:ale_r_lintr_options = 'lintr::with_defaults(line_length_linter = NULL, trailing_blank_lines_linter = NULL, trailing_whitespace_linter = NULL)'
 
 

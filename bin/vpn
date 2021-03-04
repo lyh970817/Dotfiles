@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 ZSHENV=$ARSETUP/etc/zsh/zshenv
+CURLCONF=$HOME/.curlrc
 
 if grep -Fq 'export http_proxy' $ZSHENV; 
 then 
@@ -8,6 +9,8 @@ then
     sed -i '/https_proxy/d' $ZSHENV 
     echo 'unset http_proxy' >> $ZSHENV
     echo 'unset https_proxy' >> $ZSHENV
+
+    sed -i '/proxy/d' $CURLCONF
     git config --global --unset http.proxy 
     notify-send "VPN OFF"
 else
@@ -15,6 +18,9 @@ else
     sed -i '/https_proxy/d' $ZSHENV 
     echo 'export http_proxy=https://127.0.0.1:1081' >> $ZSHENV
     echo 'export https_proxy=https://127.0.0.1:1081' >> $ZSHENV
+    
+
+    echo 'proxy = 127.0.0.1:1081' >> $CURLCONF
     git config --global http.proxy http://127.0.0.1:1081
     notify-send "VPN ON"
 fi

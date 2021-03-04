@@ -218,3 +218,5 @@ bindsym $mod+Shift+Ctrl+2 focus output HDMI-2
 bindsym $mod+Shift+Ctrl+1 focus output eDP-1
 
 
+client.focused          #000000 #000000 #000000 #000000
+client.unfocused        #fdf6e3 #fdf6e3 #fdf6e3 #fdf6e3

@@ -72,11 +72,11 @@ xdotool
 # Sound
 pactl
 pavucontrol
+pavucontrol-qt
 
 # unzip
 unzip
 
-# unzip
 arandr
 
 # Install pip
@@ -114,3 +114,13 @@ freedownloadmanager
 # vpn
 v2ray
 
+
+baidunetdisk
+
+go
+imagemagick
+ipython
+
+plink
+
+telegram-desktop
