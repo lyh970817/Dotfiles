@@ -38,6 +38,8 @@ cmd bulkrename ${{
     vidir
 }}
 
+cmd open &xdg-open $f
+#
 # Bindings
 map c $lf -remote "send $id cd $(cut -d'	' -f2 ~/.config/directories | fzf)"
 map <c-f> $lf -remote "send $id select '$(fzf)'"
@@ -53,5 +55,4 @@ map <c-r> reload
 map <enter> shell
 map x $$f
 map X !$f
-map o &mimeopen $f
 map O $mimeopen --ask $f
