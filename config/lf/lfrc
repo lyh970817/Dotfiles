@@ -38,7 +38,7 @@ cmd bulkrename ${{
     vidir
 }}
 
-cmd open &xdg-open $f
+# cmd open $xdg-open $f
 #
 # Bindings
 map c $lf -remote "send $id cd $(cut -d'	' -f2 ~/.config/directories | fzf)"
