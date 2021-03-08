@@ -5,6 +5,10 @@ i3-lock
 
 # Wallpaper
 feh
+
+# Image viewer
+sxiv
+
 curl
 
 xorg
