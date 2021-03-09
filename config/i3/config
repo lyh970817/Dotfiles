@@ -188,8 +188,8 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 #bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 
 # xbacklight
-bindsym $mod+Shift+Ctrl+f exec --no-startup-id light -A 5
-bindsym $mod+Shift+Ctrl+b exec --no-startup-id light -U 5
+bindsym $mod+Shift+Ctrl+f exec --no-startup-id light -A 1
+bindsym $mod+Shift+Ctrl+b exec --no-startup-id light -U 1
 
 bindsym $mod+Shift+Ctrl+u exec --no-startup-id pactl set-sink-mute 0 false && pactl set-sink-volume 0 +5%
 bindsym $mod+Shift+Ctrl+d exec --no-startup-id pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%
