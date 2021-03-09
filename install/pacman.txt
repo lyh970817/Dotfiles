@@ -19,6 +19,7 @@ x-server
 ttf-fira-code
 powerline-fonts
 wqy-zenhei
+wqy-bitmapfont
 
 # light control
 light
