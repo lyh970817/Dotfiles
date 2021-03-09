@@ -18,7 +18,6 @@ bibtool
 
 zoom
 
-
 pstoedit-nomagick
 autotrace-nomagick
 flif

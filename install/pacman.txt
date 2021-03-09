@@ -1,5 +1,4 @@
 i3-gaps
-i3-wm
 i3-blocks
 i3-lock
 
@@ -89,11 +88,6 @@ python-pip
 gcc-fortran
 imagemagick
 tk
-sudopip install ipython
-sudopip install pandas
-sudopip install numpy
-sudopip install matplotlib
-sudopip install autopep8
 
 xprintidle
 pandoc
@@ -118,7 +112,6 @@ freedownloadmanager
 
 # vpn
 v2ray
-
 
 baidunetdisk
 

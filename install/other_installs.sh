@@ -9,3 +9,9 @@ cd st
 sudo make install
 
 sudo pip intstall jupyter-notebook
+sudo pip install ipython
+sudo pip install pandas
+sudo pip install numpy
+sudo pip install matplotlib
+sudo pip install autopep8
+
