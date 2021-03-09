@@ -106,8 +106,7 @@ qbittorrent
 
 blueman
 fcitx
-fcitx-configtool
-fcitx-googlepinyin
+fcitx-cloudpinyin
 freedownloadmanager
 
 # vpn
