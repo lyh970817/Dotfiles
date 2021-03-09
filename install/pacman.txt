@@ -121,3 +121,5 @@ ipython
 plink
 
 telegram-desktop
+
+bluez-tools
