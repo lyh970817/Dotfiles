@@ -47,10 +47,8 @@ scrot
 dunst
 
 # Font
-otf-fira-code
+ttf-fira-code
 
-# Qt use GTK theme
-qt5-styleplugins
 
 # Hotkeys
 sxhkd
@@ -58,8 +56,6 @@ sxhkd
 # Zathura
 zathura
 zathura-pdf-mupdf
-zathura-pdf-poppler
-zathura-pdf-djvu
 
 # Hide mouse loading
 unclutter
@@ -74,7 +70,7 @@ xclip
 xdotool
 
 # Sound
-pactl
+ 
 pavucontrol
 pavucontrol-qt
 
@@ -107,18 +103,15 @@ qbittorrent
 blueman
 fcitx
 fcitx-cloudpinyin
-freedownloadmanager
 
 # vpn
 v2ray
 
-baidunetdisk
 
 go
 imagemagick
 ipython
 
-plink
 
 telegram-desktop
 

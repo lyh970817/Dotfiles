@@ -1,6 +1,7 @@
 #!/bin/bash
 
 bash ./install/install.sh
+bash ./install/other_installs.sh
 bash ./config.sh
 
 # yandex-disk setup

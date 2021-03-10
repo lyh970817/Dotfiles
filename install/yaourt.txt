@@ -35,3 +35,12 @@ nodejs-live-server
 
 electron4-bin
 dingtalk-electron
+
+# Qt use GTK theme
+qt5-styleplugins
+
+pulseaudio-ctl
+freedownloadmanager
+baidunetdisk
+
+plink

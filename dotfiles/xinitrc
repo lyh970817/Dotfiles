@@ -35,7 +35,7 @@ unclutter &
 yandex-disk start
 onedrive --syncdir ~/OneDrive --monitor &
 
-git -C $ARSETUP add \* && git -C $ARSETUP commit -m "start-up commit" && git -C $ARSETUP push
+# git -C $ARSETUP add \* && git -C $ARSETUP commit -m "start-up commit" && git -C $ARSETUP push
 
 if [[ $(iseink) -eq 1 ]];then
     eink &

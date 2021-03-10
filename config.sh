@@ -1,6 +1,9 @@
 #!/bin/bash
 
+mkdir -p $HOME/.config
 ln -s $(pwd)/config/* $HOME/.config/
+
+mkdir -p $HOME/.local/bin
 ln -s $(pwd)/bin/* $HOME/.local/bin/
 
 ln -s $(pwd)/dotfiles/profile $HOME/.profile
@@ -12,9 +15,7 @@ ln -s $(pwd)/dotfiles/Rprofile $HOME/.Rprofile
 ln -s $(pwd)/dotfiles/gitconfig $HOME/.gitconfig
 sudo ln -s $(pwd)/etc/zsh/zshenv /etc/zsh/zshenv
 
-
-mkdir $HOME/.tmp
-rm $HOME/.bash_logout $HOME/.bash_profile
+mkdir -p $HOME/.tmp
 
 sudo rm /usr/share/gtk-2.0/gtkrc
 sudo ln -s ~/.config/gtk-2.0/gtkrc-2.0 /usr/share/gtk-2.0/gtkrc
