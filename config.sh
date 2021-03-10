@@ -7,12 +7,16 @@ mkdir -p $HOME/.local/bin
 ln -s $(pwd)/bin/* $HOME/.local/bin/
 
 ln -s $(pwd)/dotfiles/profile $HOME/.profile
+
 ln -s $(pwd)/dotfiles/Xdefaults2 $HOME/.Xdefaults
 ln -s $HOME/.Xdefaults $HOME/.Xresources
+
 ln -s $(pwd)/dotfiles/zprofile $HOME/.zprofile
 ln -s $(pwd)/dotfiles/xinitrc $HOME/.xinitrc
 ln -s $(pwd)/dotfiles/Rprofile $HOME/.Rprofile
 ln -s $(pwd)/dotfiles/gitconfig $HOME/.gitconfig
+ln -s $(pwd)/dotfiles/curlrc $HOME/.curlrc
+
 sudo ln -s $(pwd)/etc/zsh/zshenv /etc/zsh/zshenv
 
 mkdir -p $HOME/.tmp

@@ -1,3 +1,5 @@
+sh ~/.dotfiles/install/pamac.sh
+
 pacman=$(sed /#/d pacman.txt|awk 'NF')
 yaourt=$(sed /#/d yaourt.txt|awk 'NF')
 

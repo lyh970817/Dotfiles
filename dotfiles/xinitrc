@@ -27,7 +27,6 @@ if [ -f "$usermodmap" ]; then
 fi
 
 fcitx -d &
-autobluetooth &
 dunst &
 sxhkd &
 xcompmgr &

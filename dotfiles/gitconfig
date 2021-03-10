@@ -9,5 +9,3 @@
 	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [credential]
 	helper = cache
-[http]
-	proxy = http://127.0.0.1:1081
