@@ -36,9 +36,10 @@ onedrive --syncdir ~/OneDrive --monitor &
 
 # git -C $ARSETUP add \* && git -C $ARSETUP commit -m "start-up commit" && git -C $ARSETUP push
 
-if [[ $(iseink) -eq 1 ]];then
-    eink &
-else
-    laptop &
-fi
+# if [[ $(iseink) -eq 1 ]];then
+#     eink &
+# else
+#     laptop &
+# fi
+eink
 exec i3

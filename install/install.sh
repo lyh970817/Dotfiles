@@ -10,6 +10,6 @@ yaourt=$(sed /#/d yaourt.txt|awk 'NF')
 
 for f in $yaourt;
 do
-    yaourt -S --noconfirm $f
+    yaourt -S --noconfirm --holdver $f
 done
 

@@ -1,5 +1,5 @@
 # Bluetooth keyboard
-obinskit
+# obinskit
 
 gtk-theme-numix-solarized
 
@@ -25,7 +25,7 @@ libfpx
 libumem-git
 brunsli
 
-brave-nightly
+brave-nightly-bin
 
 mimeo
 vidir
