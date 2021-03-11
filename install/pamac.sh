@@ -1,3 +1,5 @@
+sudo pacman -S rate-arch-mirrors
+sudo rate-arch-mirrors > /etc/pacman.d/mirrorlist
 sudo pacman -S --needed --noconfirm base-devel git wget yajl
 cd /tmp
 git clone https://aur.archlinux.org/package-query.git

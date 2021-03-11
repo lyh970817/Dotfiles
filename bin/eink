@@ -1,6 +1,6 @@
 #!/bin/bash
-# xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --primary --mode 2200x1650 --pos 0x0 --rotate normal
-# xrandr  --output HDMI-2 --scale 0.46
+xrandr --output DP-1 --primary --mode 2200x1650 --pos 0x0 --rotate normal
+xrandr  --output DP-1 --scale 0.46
 cp -f $ARSETUP/dotfiles/Xdefaults ~/.Xdefaults
 
 sed -i 's/colorscheme solarized8_flat/colorscheme bow-wob/' ~/.config/nvim/init.vim

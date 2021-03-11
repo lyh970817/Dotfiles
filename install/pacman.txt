@@ -100,7 +100,6 @@ vlc
 mpv
 qbittorrent
 
-blueman
 fcitx
 fcitx-cloudpinyin
 
@@ -112,7 +111,9 @@ go
 imagemagick
 ipython
 
-
 telegram-desktop
 
 bluez-tools
+
+#font
+ttf-dejavu

@@ -1,38 +1,0 @@
-v2gen v2.0.0.2, V2Ray 4.31.0 (go1.15.2 12cores linux/386)
-Pinging 2/33Pinging 0/33Pinging 1/33Pinging 3/33Pinging 4/33Pinging 5/33Pinging 6/33Pinging 7/33Pinging 8/33Pinging 9/33Pinging 10/33Pinging 11/33Pinging 12/33Pinging 13/33Pinging 14/33Pinging 15/33Pinging 16/33Pinging 17/33Pinging 18/33Pinging 19/33Pinging 20/33Pinging 21/33Pinging 22/33Pinging 23/33Pinging 24/33Pinging 25/33Pinging 26/33Pinging 27/33Pinging 28/33Pinging 29/33Pinging 30/33Pinging 31/33Pinging 32/33Pinging 33/33
-[ 0] 04 香港高速｜A｜ =͟͟͞͞(。•̀д•́)[450ms  (0 errors)]
-[ 1] 10 日本高速｜B｜              [454ms  (0 errors)]
-[ 2] 02 香港高速｜A｜ =͟͟͞͞(。•̀д•́)[461ms  (0 errors)]
-[ 3] 05 香港高速｜A｜ =͟͟͞͞(。•̀д•́)[469ms  (0 errors)]
-[ 4] 10 日本高速｜A｜ =͟͟͞͞(。•̀д•́)[564ms  (0 errors)]
-[ 5] 01 香港高速｜C｜ (✿◡‿◡)   [578ms  (0 errors)]
-[ 6] 03 香港高速｜A｜ (✿◡‿◡)   [586ms  (0 errors)]
-[ 7] 04 香港高速｜B｜ =͟͟͞͞(。•̀д•́)[622ms  (0 errors)]
-[ 8] 18 日本超速 =͟͟͞͞(。•̀д•́)[669ms  (0 errors)]
-[ 9] 03 香港高速｜C｜ =͟͟͞͞(。•̀д•́)[809ms  (0 errors)]
-[10] 15 香港超速 =͟͟͞͞(。•̀д•́)[911ms  (0 errors)]
-[11] 01 香港高速｜B｜ =͟͟͞͞(。•̀д•́)[985ms  (0 errors)]
-[12] 14 香港超速   =͟͟͞͞(。•̀д•́)[1.057s (0 errors)]
-[13] 07 美国高速｜A｜              [1.073s (0 errors)]
-[14] 07 美国高速｜B｜              [1.117s (0 errors)]
-[15] 13 香港超速 =͟͟͞͞(。•̀д•́)[1.23s  (0 errors)]
-[16] 02 香港高速｜C｜ =͟͟͞͞(。•̀д•́)[1.255s (0 errors)]
-[17] 01 香港高速｜A｜ =͟͟͞͞(。•̀д•́)[1.304s (0 errors)]
-[18] 06 香港高速   =͟͟͞͞(。•̀д•́)[1.353s (0 errors)]
-[19] 04 香港高速｜C｜ =͟͟͞͞(。•̀д•́)[1.431s (0 errors)]
-[20] 02 香港高速｜B｜ =͟͟͞͞(。•̀д•́)[1.469s (0 errors)]
-[21] 05 香港高速｜B｜ =͟͟͞͞(。•̀д•́)[1.636s (0 errors)]
-[22] 08 新加坡超高速   =͟͟͞͞(。•̀д•́)[1.787s (0 errors)]
-[23] 09 新加坡超高速 =͟͟͞͞(。•̀д•́)[1.892s (0 errors)]
-[24] 17 新加坡超速 =͟͟͞͞(。•̀д•́)[1.937s (0 errors)]
-[25] 16 香港超速  =͟͟͞͞(。•̀д•́)[1.972s (0 errors)]
-[26] 12 新加坡超速 =͟͟͞͞(。•̀д•́)[3.036s (0 errors)]
-[27] 11 新加坡超速 =͟͟͞͞(。•̀д•́)[2.233s (1 errors)]
-[28] 03 香港高速｜B｜ (✿◡‿◡)   [2.874s (2 errors)]
-[29] 剩余流量：77.33% 115.99GB     [0s     (2 errors)]
-[30] 过期时间：2029-03-08 19:07:27 [0s     (2 errors)]
-[31] 19 别选我｜不能用请去官网     [0s     (2 errors)]
-[32] 20 别选我｜联系不上客服请去官网[0s     (2 errors)]
-[33] 21 别选我｜官网 bk.mxxst2.de  [0s     (2 errors)]
-=====================
-Please Select: config has been written to /etc/v2ray/config.json
