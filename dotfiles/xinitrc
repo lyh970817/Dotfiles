@@ -32,6 +32,7 @@ sxhkd &
 xcompmgr &
 unclutter &
 xscreensaver &
+gitwatch $ARSETUP &
 # onedrive --syncdir ~/OneDrive --monitor &
  
 # # git -C $ARSETUP add \* && git -C $ARSETUP commit -m "start-up commit" && git -C $ARSETUP push
