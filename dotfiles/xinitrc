@@ -41,5 +41,5 @@ gitwatch $ARSETUP &
 # else
 #     laptop &
 # fi
-$HOME/.local/bin/eink
+eink
 exec i3
