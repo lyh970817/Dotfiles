@@ -1,3 +1,7 @@
+
+# Symbols in terminal
+libxft-bgra
+
 # Bluetooth keyboard
 # obinskit
 
@@ -44,3 +48,6 @@ freedownloadmanager
 baidunetdisk
 
 plink
+
+pkgsync
+

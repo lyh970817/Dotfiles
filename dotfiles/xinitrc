@@ -31,8 +31,8 @@ dunst &
 sxhkd &
 xcompmgr &
 unclutter &
-yandex-disk start
-onedrive --syncdir ~/OneDrive --monitor &
+xscreensaver &
+# onedrive --syncdir ~/OneDrive --monitor &
  
 # # git -C $ARSETUP add \* && git -C $ARSETUP commit -m "start-up commit" && git -C $ARSETUP push
 
@@ -41,5 +41,5 @@ onedrive --syncdir ~/OneDrive --monitor &
 # else
 #     laptop &
 # fi
-eink
+$HOME/.local/bin/eink
 exec i3

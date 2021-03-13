@@ -1,6 +1,6 @@
 i3-gaps
-i3-blocks
-i3-lock
+i3blocks
+i3lock
 
 # Wallpaper
 feh
@@ -117,3 +117,10 @@ bluez-tools
 
 #font
 ttf-dejavu
+
+pcmanfm
+libreoffice-still
+xscreensaver
+
+# Check largest files
+ncdu

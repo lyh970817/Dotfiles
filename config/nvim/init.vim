@@ -90,7 +90,7 @@ if !filereadable(expand('~/.config/coc/extensions/node_modules/coc-sh/package.js
 endif
 
 " Theme setting
-colorscheme bow-wob
+colorscheme solarized8_flat
 let g:airline_theme='silver'
 
 "" Transpearancy
@@ -102,7 +102,7 @@ highlight ColorColumn ctermbg=white
 call matchadd('ColorColumn', '\%81v', 100)
 
 "" Get rid of tilda at the end of file
-au ColorScheme * highlight EndOfBuffer ctermfg=white ctermbg=none
+au ColorScheme * highlight EndOfBuffer ctermfg=black ctermbg=none
 
 set signcolumn=no
 set updatetime=500
@@ -223,8 +223,9 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 " Update binds when sxhkdrc is updated.
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 
+let cmdline_map_start          = '<F1>'
+
 " Bash terminal split
-    nnoremap <F1> \s
 " " Use <ESC> to exit terminal
 "     tnoremap <Esc> <C-\><C-n>
 " Maximize current buffer
@@ -382,7 +383,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     " Terminate
     autocmd Filetype python nmap <silent> <buffer> <C-c> <C-j>A<C-c><ESC><C-k>
     " Open python automatically
-    autocmd Filetype python normal \s,r
+    autocmd Filetype python normal <F1>,r
     " autocmd Filetype python nmap <silent> <buffer> gK <Plug>(kite-docs)
     " autocmd Filetype python nmap <silent> gh ghh<C-W>H
     let cmdline_follow_colorscheme = 1
@@ -482,8 +483,7 @@ let $Zotcite_exclude = "note attachment"
     nmap <silent> <C-;> <Plug>(ale_previous)
     nmap <silent> <C-,> <Plug>(ale_next)
     autocmd Filetype r,rmd let g:ale_fix_on_save = 1
-    let g:ale_r_lintr_options = 'lintr::with_defaults(line_length_linter = NULL, trailing_blank_lines_linter = NULL, trailing_whitespace_linter = NULL)'
-
+    autocmd Filetype r,rmd let g:ale_r_lintr_options = 'lintr::with_defaults(line_length_linter = NULL, trailing_blank_lines_linter = NULL, trailing_whitespace_linter = NULL)'
 
 " autocmd Filetype markdown imap <CR> <ESC>maVgggq`aa<CR>
 
