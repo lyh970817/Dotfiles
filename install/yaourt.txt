@@ -51,3 +51,4 @@ plink
 
 pkgsync
 
+gitwatch
