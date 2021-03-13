@@ -31,7 +31,6 @@ dunst &
 sxhkd &
 xcompmgr &
 unclutter &
-xscreensaver &
 gitwatch $ARSETUP &
 # onedrive --syncdir ~/OneDrive --monitor &
  
