@@ -15,6 +15,7 @@ sed -i 's/Raleigh/NumixSolarizedLightCyan/' ~/.config/gtk-2.0/gtkrc-2.0
 sed -i 's/gtk-icon-theme-name=HighContrast/gtk-icon-theme-name=Adwaita/' ~/.config/gtk-3.0/settings.ini
 sed -i 's/gtk-icon-theme-name="HighContrast"/gtk-icon-theme-name="Adwaita"/' ~/.config/gtk-2.0/gtkrc-2.0
 
+kill $(pidof)
 setbg
 pgrep -x dunst >/dev/null && killall dunst && setsid dunst &
 xrdb ~/.Xresources
