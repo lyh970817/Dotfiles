@@ -23,7 +23,7 @@ cmd open ${{
     esac
 }}
 
-cmd open ${{
+cmd unzip ${{
     case $(file --mime-type $f -b) in
     	text/troff) man ./ $f;;
         text/*) $EDITOR $fx;;
