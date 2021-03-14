@@ -63,4 +63,4 @@ map x $$f
 map X !$f
 map O $mimeopen --ask $f
 map Z quit
-map e quit
+map e extract
