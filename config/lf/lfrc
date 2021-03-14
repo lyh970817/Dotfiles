@@ -35,10 +35,6 @@ cmd extract ${{
     esac
 }}
 
-cmd extract ${{
-    unrar -e $f
-}}
-
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
 cmd delete ${{
