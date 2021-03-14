@@ -24,9 +24,14 @@ cmd open ${{
 }}
 
 cmd extract ${{
-    case $(file --mime-type $f -b) in
-    	application/x-rar) unrar -e $fx;;
-        *) for f in $fx; do setsid $OPENER $f >/dev/null 2>&1 & done;;
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
     esac
 }}
 
