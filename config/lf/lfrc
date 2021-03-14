@@ -31,7 +31,7 @@ cmd extract ${{
 }}
 
 cmd extract ${{
-    unrar -e $fx
+    unrar -e $f
 }}
 
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
