@@ -52,6 +52,7 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 
 cmd delete ${{
