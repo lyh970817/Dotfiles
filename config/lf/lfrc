@@ -31,10 +31,7 @@ cmd extract ${{
 }}
 
 cmd extract ${{
-    case $(file --mime-type $f -b) in
-    	application/x-rar) unrar -e $fx;;
-        *) for f in $fx; do setsid $OPENER $f >/dev/null 2>&1 & done;;
-    esac
+    unrar -e $fx
 }}
 
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
