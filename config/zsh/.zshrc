@@ -90,7 +90,7 @@ else
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 fi
 
-xset r rate 250 60
+xset r rate 200 60
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # [[ -z $(ps -aux|pgrep yandex) ]] && yandex-disk start >/dev/null
