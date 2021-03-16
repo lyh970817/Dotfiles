@@ -18,6 +18,8 @@ super + w
 	brave-nightly
 super + z
 	zotero
+super + v
+	zotero
 super + Insert
 	showclip
 super + F10
