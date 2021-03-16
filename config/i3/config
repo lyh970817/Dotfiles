@@ -194,7 +194,7 @@ bindsym $mod+Shift+Ctrl+f exec --no-startup-id light -A 1
 bindsym $mod+Shift+Ctrl+b exec --no-startup-id light -U 1
 
 bindsym $mod+Shift+Ctrl+u exec --no-startup-id pulseaudio-ctl up 1
-bindsym $mod+Shift+Ctrl+d exec --no-startup-id pactl set-sink-mute 0 false && pactl set-sink-volume 0 -5%
+bindsym $mod+Shift+Ctrl+d exec --no-startup-id pulseaudio-ctl up 1
 bindsym $mod+Shift+Ctrl+m exec --no-startup-id pactl set-sink-mute 0 true
 
 bindsym $mod+t exec --no-startup-id gettime
