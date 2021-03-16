@@ -9,8 +9,7 @@ fi
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
+zstyle ':completion:*' menu select zmodload zsh/complist
 compinit
 
 # Include hidden files in autocomplete:
