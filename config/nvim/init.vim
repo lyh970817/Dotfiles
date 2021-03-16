@@ -21,8 +21,7 @@ Plug 'jalvesaq/vimcmdline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'voldikss/vim-mma'
 
-" Notebook
-Plug 'baruchel/vim-notebook'
+" Notebook Plug 'baruchel/vim-notebook'
 
 " R
 Plug 'jalvesaq/Nvim-R'
