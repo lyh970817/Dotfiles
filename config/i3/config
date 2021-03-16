@@ -1,5 +1,5 @@
-gaps inner 20
-gaps outer 20
+gaps inner 13
+gaps outer 8
 smart_borders on
 
 # $Mod = WINDOWS key or Super key or Mod4
