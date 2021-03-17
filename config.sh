@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -p $HOME/.config
-ln -s $(pwd)/config/* $HOME/.config/
+cp -as $(pwd)/config/* $HOME/.config/
 
 mkdir -p $HOME/.local/bin
 ln -s $(pwd)/bin/* $HOME/.local/bin/
@@ -18,9 +18,10 @@ ln -s $(pwd)/dotfiles/gitconfig $HOME/.gitconfig
 ln -s $(pwd)/dotfiles/curlrc $HOME/.curlrc
 
 sudo ln -s $(pwd)/etc/zsh/zshenv /etc/zsh/zshenv
-sudo ln -s $(pwd)/etc/pkgsync/pkg_install.list /etc/pkgsync/pkg_install.list
+sudo ln -s $HOME/Yandex.Disk/Linux/pkgsync/pkg_install.list /etc/pkgsync/pkg_install.list
 
 ln -s $HOME/Yandex.Disk/.tmp $HOME/.tmp
+ln -s $HOME/Yandex.Disk/Linux/fcitx $HOME/.config/fcitx
 
 sudo rm /usr/share/gtk-2.0/gtkrc
 sudo ln -s ~/.config/gtk-2.0/gtkrc-2.0 /usr/share/gtk-2.0/gtkrc
