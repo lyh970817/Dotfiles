@@ -32,7 +32,7 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 # export QT_IM_MODULE  DEFAULT=fcitx
 # export XMODIFIERS    DEFAULT=@im=fcitx
 
-# Commit setup
+# Push setup
 git -C $ARSETUP push &
 
 # Autostart X
