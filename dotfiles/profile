@@ -33,7 +33,6 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 # export XMODIFIERS    DEFAULT=@im=fcitx
 
 # Commit setup
-
 git -C $ARSETUP push &
 
 # Autostart X
