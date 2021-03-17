@@ -1,6 +1,0 @@
-2020-06-05T12:32:08.383Z - info: [ui] initDb
-2020-06-05T12:32:08.568Z - info: [ui] getPragmaVersion ret {"user_version":16}
-2020-06-05T12:39:26.238Z - info: [ui] initDb
-2020-06-05T12:39:26.413Z - info: [ui] getPragmaVersion ret {"user_version":16}
-2020-06-05T12:39:49.696Z - info: [ui] initDb
-2020-06-05T12:39:49.871Z - info: [ui] getPragmaVersion ret {"user_version":16}
