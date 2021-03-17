@@ -31,5 +31,5 @@ sudo sed -i 's/AutoEnable=false/AutoEnable=true/' /etc/bluetooth/main.conf
 
 xdg-mime default org.pwmt.zathura-pdf-mupdf.desktop application/pdf
 
-udo v2gen -u 'https://1.mxxst2.de/link/IXkdaCmjaXsAz6RG?sub=3&extend=1'
+sudo v2gen -u 'https://1.mxxst2.de/link/IXkdaCmjaXsAz6RG?sub=3&extend=1'
 udo systemctl enable --now v2ray
