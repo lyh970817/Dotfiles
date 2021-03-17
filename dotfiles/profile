@@ -33,7 +33,7 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 # export XMODIFIERS    DEFAULT=@im=fcitx
 
 # Push setup
-git -C $ARSETUP push &
+#3 git -C $ARSETUP push >/dev/null 2>&1 & 
 
 # Autostart X
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
