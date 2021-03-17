@@ -20,7 +20,7 @@ ln -s $(pwd)/dotfiles/curlrc $HOME/.curlrc
 sudo ln -s $(pwd)/etc/zsh/zshenv /etc/zsh/zshenv
 sudo ln -s $(pwd)/etc/pkgsync/pkg_install.list /etc/pkgsync/pkg_install.list
 
-ln -s ~/Yandex.Disk/.tmp ~/.tmp
+ln -s $HOME/Yandex.Disk/.tmp ~/.tmp
 
 sudo rm /usr/share/gtk-2.0/gtkrc
 sudo ln -s ~/.config/gtk-2.0/gtkrc-2.0 /usr/share/gtk-2.0/gtkrc
